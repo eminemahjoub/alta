@@ -10,18 +10,18 @@
     <meta name="keywords" content="transformation digitale, identité numérique, eKYC, signature électronique, CRM, Abidjan, Côte d'Ivoire, cybersécurité, automatisation">
     <meta name="author" content="Altadigit">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://altadigit.ci/">
+    <link rel="canonical" href="https://altadigit.pro/">
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://altadigit.ci/">
+    <meta property="og:url" content="https://altadigit.pro/">
     <meta property="og:title" content="Altadigit | Transformation Digitale & Identité Numérique">
     <meta property="og:description" content="Solutions sécurisées de digitalisation : eKYC, Signature électronique et CRM intelligent pour booster votre croissance.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://altadigit.ci/">
+    <meta property="twitter:url" content="https://altadigit.pro/">
     <meta property="twitter:title" content="Altadigit | Transformation Digitale & Identité Numérique">
     <meta property="twitter:description" content="Solutions sécurisées de digitalisation : eKYC, Signature électronique et CRM intelligent.">
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200">
@@ -53,6 +53,7 @@
         }
         .gradient-text {
             background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -102,6 +103,101 @@
         }
         .animation-delay-2000 {
             animation-delay: 2s;
+        }
+
+        /* --- Scoped: Diagnosis / Cure sections --- */
+        @keyframes alta-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .alta-marquee-wrap {
+            overflow: hidden;
+            width: 100%;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .alta-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: alta-marquee 28s linear infinite;
+        }
+        .alta-marquee-wrap:hover .alta-marquee-track { animation-play-state: paused; }
+        .alta-marquee-row { display: flex; white-space: nowrap; }
+
+        @keyframes alta-dot-pulse {
+            0% { transform: scale(1); opacity: 0.55; }
+            70% { transform: scale(2.35); opacity: 0; }
+            100% { transform: scale(2.35); opacity: 0; }
+        }
+        .alta-dot-pulse { animation: alta-dot-pulse 1.2s ease-out infinite; }
+
+        .alta-brut-shadow {
+            box-shadow: 10px 10px 0 rgba(0,0,0,1);
+        }
+        .alta-brut-shadow-sm {
+            box-shadow: 6px 6px 0 rgba(0,0,0,1);
+        }
+        .alta-card-lift {
+            transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+        }
+        .alta-card-lift:hover { transform: translateY(-4px); }
+        .alta-cta-shadow-shift:hover { box-shadow: 14px 14px 0 rgba(0,0,0,1); transform: translateY(-2px); }
+
+        .alta-glitch-lines {
+            background-image:
+                linear-gradient(to bottom, rgba(239,68,68,0.18) 1px, transparent 1px);
+            background-size: 100% 12px;
+            opacity: 0.22;
+            mix-blend-mode: multiply;
+            mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+        }
+
+        .alta-dark-grid {
+            background-color: #0b0f14;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        @keyframes alta-flow-pulse {
+            0% { background-position: 0 -120px; }
+            100% { background-position: 0 420px; }
+        }
+        .alta-flow-line {
+            background-image: linear-gradient(
+                to bottom,
+                rgba(148,163,184,0.0),
+                rgba(148,163,184,0.55),
+                rgba(110,231,183,0.95),
+                rgba(148,163,184,0.55),
+                rgba(148,163,184,0.0)
+            );
+            background-size: 100% 220px;
+            animation: alta-flow-pulse 1.8s linear infinite;
+        }
+
+        .alta-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            border-radius: 9999px;
+            border: 1px solid rgba(148,163,184,0.55);
+            color: rgba(226,232,240,0.9);
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+            transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+        }
+        .alta-pill:hover {
+            background: rgba(110,231,183,0.92);
+            color: #0b0f14;
+            border-color: rgba(110,231,183,0.92);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -252,100 +348,434 @@
     </section>
 
     <!-- Activités Section -->
-    <section id="expertise" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-6 reveal">
-                <div class="max-w-2xl">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Solutions d'identité & parcours digitaux</h2>
-                    <p class="text-lg text-slate-600">
-                        Notre expertise technique au service de votre sécurité et de votre productivité.
-                    </p>
-                </div>
-                <div class="text-blue-600 font-bold flex items-center gap-2">
-                    Activités principales <i data-lucide="chevron-right" class="w-5 h-5"></i>
+    <section id="expertise" class="bg-white overflow-hidden">
+        <!-- Top marquee bar -->
+        <div class="bg-slate-900 text-white border-b-4 border-black">
+            <div class="alta-marquee-wrap py-3">
+                <div class="alta-marquee-track">
+                    <div class="alta-marquee-row text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                    </div>
+                    <div class="alta-marquee-row text-xs sm:text-sm font-semibold tracking-wide" aria-hidden="true">
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-6">
+                            <span class="text-red-400">⚠</span>
+                            <span>System fragmented • 14 tools, 0 sync • Status: degraded</span>
+                        </span>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- eKYC -->
-                <div class="group p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-blue-600 transition-all duration-300 reveal">
-                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">eKYC</h4>
-                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Vérification d'identité à distance, rapide, sécurisée et totalement conforme.</p>
+        <div class="py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Label -->
+                <div class="reveal flex items-center gap-3">
+                    <span class="relative inline-flex h-2.5 w-2.5">
+                        <span class="alta-dot-pulse absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-60"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                    </span>
+                    <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-700/80" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                        Section 01 — The Diagnosis
+                    </div>
                 </div>
-                <!-- Signature -->
-                <div class="group p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-blue-600 transition-all duration-300 reveal delay-75">
-                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">Signature électronique</h4>
-                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Signature à distance avec pleine valeur légale pour vos documents officiels.</p>
+
+                <!-- Headline + support -->
+                <div class="mt-8 grid lg:grid-cols-12 gap-10 items-start reveal">
+                    <div class="lg:col-span-8">
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.05] tracking-tight">
+                            Your stack is
+                            <span class="relative inline-block align-baseline">
+                                <span class="italic text-red-600">broken</span>
+                                <svg class="pointer-events-none absolute left-0 -bottom-2 w-full h-[14px] text-red-600/70" viewBox="0 0 220 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M4 16C34 8 58 20 88 12C118 4 140 20 170 12C193 6 208 10 216 12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                    <path d="M8 20C40 10 62 22 92 14C122 6 144 22 174 14C196 8 210 12 218 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+                                </svg>
+                            </span>.
+                            You just <span class="font-light text-slate-500">stopped noticing</span>.
+                        </h2>
+                    </div>
+                    <div class="lg:col-span-4">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            This isn't productivity. It's archaeology.
+                        </p>
+                        <div class="mt-6 border-l-4 border-slate-900 pl-5">
+                            <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-500" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                                Status report
+                            </div>
+                            <div class="mt-2 text-sm text-slate-700">
+                                Context is scattered. Ownership is unclear. Drift is the default.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Onboarding -->
-                <div class="group p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-blue-600 transition-all duration-300 reveal delay-150">
-                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">Onboarding digital</h4>
-                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Intégration client 100% en ligne, fluide et sécurisée pour booster votre conversion.</p>
+
+                <!-- Broken cards -->
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
+                    <button type="button" data-action="broken-tool-card" class="reveal group relative text-left bg-white border-4 border-black rounded-2xl p-6 alta-brut-shadow alta-card-lift -rotate-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-900/20">
+                        <span class="absolute -top-3 -right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-red-600 text-white border-4 border-black alta-brut-shadow-sm" aria-hidden="true">✕</span>
+                        <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">CRM</div>
+                                <div class="mt-2 text-sm text-slate-600">Salesforce / HubSpot</div>
+                            </div>
+                            <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
+                                <span aria-hidden="true">⚠</span>
+                                <span class="text-slate-900">Issue</span>
+                            </span>
+                        </div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">23 custom fields ignored</div>
+                        <div class="mt-6 flex items-end justify-between gap-4">
+                            <div class="text-3xl font-extrabold text-slate-900 leading-none">67%</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">data unused</div>
+                        </div>
+                    </button>
+
+                    <button type="button" data-action="broken-tool-card" class="reveal group relative text-left bg-white border-4 border-black rounded-2xl p-6 alta-brut-shadow alta-card-lift rotate-[1.5deg] focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-900/20">
+                        <span class="absolute -top-3 -right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-red-600 text-white border-4 border-black alta-brut-shadow-sm" aria-hidden="true">✕</span>
+                        <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">Spreadsheets</div>
+                                <div class="mt-2 text-sm text-slate-600">The shadow database</div>
+                            </div>
+                            <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
+                                <span aria-hidden="true">⚠</span>
+                                <span class="text-slate-900">Issue</span>
+                            </span>
+                        </div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">Last edit: 3 weeks ago</div>
+                        <div class="mt-6 flex items-end justify-between gap-4">
+                            <div class="text-2xl font-extrabold text-slate-900 leading-none">v17_FINAL_v2</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">current version</div>
+                        </div>
+                    </button>
+
+                    <button type="button" data-action="broken-tool-card" class="reveal group relative text-left bg-white border-4 border-black rounded-2xl p-6 alta-brut-shadow alta-card-lift -rotate-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-900/20">
+                        <span class="absolute -top-3 -right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-red-600 text-white border-4 border-black alta-brut-shadow-sm" aria-hidden="true">✕</span>
+                        <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">Automations</div>
+                                <div class="mt-2 text-sm text-slate-600">Zapier / Make</div>
+                            </div>
+                            <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
+                                <span aria-hidden="true">⚠</span>
+                                <span class="text-slate-900">Issue</span>
+                            </span>
+                        </div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">Webhook failed at 03:42</div>
+                        <div class="mt-6 flex items-end justify-between gap-4">
+                            <div class="text-3xl font-extrabold text-slate-900 leading-none">412</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">errors this week</div>
+                        </div>
+                    </button>
+
+                    <button type="button" data-action="broken-tool-card" class="reveal group relative text-left bg-white border-4 border-black rounded-2xl p-6 alta-brut-shadow alta-card-lift rotate-[2.5deg] focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-900/20">
+                        <span class="absolute -top-3 -right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-red-600 text-white border-4 border-black alta-brut-shadow-sm" aria-hidden="true">✕</span>
+                        <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">AI Assistant</div>
+                                <div class="mt-2 text-sm text-slate-600">Generic ChatGPT wrapper</div>
+                            </div>
+                            <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
+                                <span aria-hidden="true">⚠</span>
+                                <span class="text-slate-900">Issue</span>
+                            </span>
+                        </div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">Doesn't know your business</div>
+                        <div class="mt-6 flex items-end justify-between gap-4">
+                            <div class="text-3xl font-extrabold text-slate-900 leading-none">0%</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">context awareness</div>
+                        </div>
+                    </button>
                 </div>
-                <!-- Fraude -->
-                <div class="group p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-blue-600 transition-all duration-300 reveal delay-225">
-                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">Détection de fraude</h4>
-                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Analyse par Intelligence Artificielle des anomalies et prévention en temps réel.</p>
-                </div>
-                <!-- Automatisation -->
-                <div class="group p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-blue-600 transition-all duration-300 reveal delay-300">
-                    <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">Automatisation</h4>
-                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Optimisation des processus pour réduire les erreurs et améliorer la productivité globale.</p>
+
+                <!-- CTA block -->
+                <div class="mt-14 text-center reveal">
+                    <div class="flex justify-center">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-white alta-brut-shadow-sm animate-bounce" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-slate-900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12 5v12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M7 13l5 5 5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-2xl sm:text-3xl font-extrabold text-slate-900">
+                        What if your tools actually understood what you do?
+                    </div>
+                    <div class="mt-6">
+                        <a href="#innovation" data-action="show-alternative" class="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl font-extrabold tracking-wide border-4 border-black alta-brut-shadow alta-cta-shadow-shift focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-900/20">
+                            <span aria-hidden="true">⚡</span>
+                            <span>SHOW ME THE ALTERNATIVE</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Innovation Spotlight -->
-    <section id="innovation" class="py-24 bg-slate-900 text-white overflow-hidden">
+    <section id="innovation" class="py-24 text-white overflow-hidden alta-dark-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <span class="text-blue-400 font-bold tracking-widest uppercase text-sm">Focus Innovation</span>
-                    <h2 class="text-4xl lg:text-5xl font-bold mt-4 mb-8 leading-tight">QR Code intelligent & <br><span class="text-blue-400">CRM connecté</span></h2>
-                    <p class="text-xl text-slate-400 mb-10 leading-relaxed">
-                        Et si un simple QR Code transformait votre relation client ? Un scan permet d'accéder aux infos professionnelles, d'enregistrer les contacts et de déclencher des actions marketing.
+            <!-- Label -->
+            <div class="reveal flex items-center gap-3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-emerald-300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2l1.4 6.2L20 9l-6.1 1.3L12 16l-1.9-5.7L4 9l6.6-.8L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M18.5 13.5l.8 3.4 3.2.6-3.1.7-.9 3.3-.9-3.3-3.1-.7 3.2-.6.8-3.4z" fill="currentColor" opacity="0.55"/>
+                </svg>
+                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-200/80" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                    Section 02 — The Cure
+                </div>
+            </div>
+
+            <!-- Headline -->
+            <div class="mt-8 grid lg:grid-cols-12 gap-10 items-start reveal">
+                <div class="lg:col-span-7">
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
+                        Tools that <span class="italic text-emerald-300">adapt</span> to <span class="font-light text-slate-300">you</span>.
+                    </h2>
+                </div>
+                <div class="lg:col-span-5">
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        Meet your <span class="text-emerald-300 font-semibold">Digital Twin</span> — a living model of how your business actually runs.
                     </p>
-                    
-                    <div class="space-y-8">
-                        <div class="flex gap-6">
-                            <div class="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center shrink-0 border border-blue-600/30">
-                                <i data-lucide="trending-up" class="w-6 h-6 text-blue-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold mb-2">Bénéfices business</h4>
-                                <p class="text-slate-400">Meilleure gestion des leads, relation client optimisée, gain de temps précieux et suivi exploitable des données.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div class="w-12 h-12 rounded-full bg-emerald-600/20 flex items-center justify-center shrink-0 border border-emerald-600/30">
-                                <i data-lucide="leaf" class="w-6 h-6 text-emerald-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold mb-2">Impact écologique</h4>
-                                <p class="text-slate-400">Réduction massive du papier, des impressions et des déchets via des échanges d'informations 100% digitaux.</p>
-                            </div>
+                    <div class="mt-6 border-l-4 border-emerald-300/80 pl-5">
+                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                            Software molded to reality. Not the other way around.
                         </div>
                     </div>
                 </div>
-                <div class="relative reveal delay-200">
-                    <div class="aspect-square bg-gradient-to-br from-blue-600 to-indigo-800 rounded-3xl p-12 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
-                        <div class="bg-white p-6 rounded-2xl shadow-2xl">
-                            <i data-lucide="qr-code" class="w-48 h-48 text-slate-900"></i>
+            </div>
+
+            <!-- Two-column block -->
+            <div class="mt-14 grid lg:grid-cols-12 gap-10 items-start">
+                <!-- Pipeline -->
+                <div class="lg:col-span-7 reveal">
+                    <div class="relative pl-10">
+                        <div class="alta-flow-line absolute left-4 top-2 bottom-2 w-px bg-slate-700" aria-hidden="true"></div>
+
+                        <button type="button" data-action="pipeline-step" class="group w-full text-left relative mb-6 rounded-2xl border border-slate-700/70 bg-slate-900/30 backdrop-blur px-6 py-5 alta-card-lift focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/20">
+                            <span class="absolute left-3 top-6 inline-flex w-3 h-3 rounded-full bg-emerald-300 ring-4 ring-slate-900" aria-hidden="true"></span>
+                            <div class="flex items-start justify-between gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl border border-slate-700 bg-slate-950/40 flex items-center justify-center text-slate-200 group-hover:text-emerald-300 transition-colors">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M7 8h10M7 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            <path d="M6 20l2-3h10a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v5a4 4 0 0 0 4 4v3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">01</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">AI Interview</h3>
+                                        <div class="mt-2 text-slate-300">A conversation, not a form. The AI maps how you actually work — workarounds, unspoken rules.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Detail:</span> Voice or text. No scripts.</div>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <div class="text-sm font-semibold text-slate-200">~22 min</div>
+                                    <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span class="text-sm font-semibold">Open</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button type="button" data-action="pipeline-step" class="group w-full text-left relative mb-6 rounded-2xl border border-slate-700/70 bg-slate-900/30 backdrop-blur px-6 py-5 alta-card-lift focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/20">
+                            <span class="absolute left-3 top-6 inline-flex w-3 h-3 rounded-full bg-emerald-300 ring-4 ring-slate-900" aria-hidden="true"></span>
+                            <div class="flex items-start justify-between gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl border border-slate-700 bg-slate-950/40 flex items-center justify-center text-slate-200 group-hover:text-emerald-300 transition-colors">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7z" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">02</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">Twin Modeling</h3>
+                                        <div class="mt-2 text-slate-300">Your operations become a living graph. Captured as they exist.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Detail:</span> Editable. Versioned. Yours.</div>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <div class="text-sm font-semibold text-slate-200">Real-time</div>
+                                    <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span class="text-sm font-semibold">Open</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button type="button" data-action="pipeline-step" class="group w-full text-left relative mb-6 rounded-2xl border border-slate-700/70 bg-slate-900/30 backdrop-blur px-6 py-5 alta-card-lift focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/20">
+                            <span class="absolute left-3 top-6 inline-flex w-3 h-3 rounded-full bg-emerald-300 ring-4 ring-slate-900" aria-hidden="true"></span>
+                            <div class="flex items-start justify-between gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl border border-slate-700 bg-slate-950/40 flex items-center justify-center text-slate-200 group-hover:text-emerald-300 transition-colors">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M7 7h10v10H7V7z" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">03</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">Tool Generation</h3>
+                                        <div class="mt-2 text-slate-300">Interfaces, automations, dashboards generated from your twin.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Detail:</span> Deployed in your stack.</div>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <div class="text-sm font-semibold text-slate-200">&lt; 60 sec</div>
+                                    <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span class="text-sm font-semibold">Open</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button type="button" data-action="pipeline-step" class="group w-full text-left relative rounded-2xl border border-slate-700/70 bg-slate-900/30 backdrop-blur px-6 py-5 alta-card-lift focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/20">
+                            <span class="absolute left-3 top-6 inline-flex w-3 h-3 rounded-full bg-emerald-300 ring-4 ring-slate-900" aria-hidden="true"></span>
+                            <div class="flex items-start justify-between gap-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl border border-slate-700 bg-slate-950/40 flex items-center justify-center text-slate-200 group-hover:text-emerald-300 transition-colors">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M20 6v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4 18v-6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M20 12a8 8 0 0 0-14.9-4M4 12a8 8 0 0 0 14.9 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">04</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">Auto-Improvement</h3>
+                                        <div class="mt-2 text-slate-300">Every interaction refines the twin. Drift becomes signal.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Detail:</span> Learns from usage.</div>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <div class="text-sm font-semibold text-slate-200">Continuous</div>
+                                    <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <span class="text-sm font-semibold">Open</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right stack -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-700/70 bg-slate-900/25 px-5 py-4">
+                            <div class="text-3xl sm:text-4xl font-extrabold leading-none">
+                                <span class="inline-block px-3 py-1 rounded-xl bg-emerald-300/15 text-emerald-300 border border-emerald-300/30">94%</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">less context-switching</div>
+                            </div>
                         </div>
-                        <div class="absolute -bottom-4 -right-4 bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700">
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
-                                    <i data-lucide="database" class="w-5 h-5 text-white"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-slate-400 uppercase font-bold tracking-tighter">CRM Sync</div>
-                                    <div class="text-sm font-bold">Données structurées</div>
-                                </div>
+                        <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-700/70 bg-slate-900/25 px-5 py-4">
+                            <div class="text-3xl sm:text-4xl font-extrabold leading-none">
+                                <span class="inline-block px-3 py-1 rounded-xl bg-amber-300/15 text-amber-300 border border-amber-300/30">12×</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">faster tool deployment</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-700/70 bg-slate-900/25 px-5 py-4">
+                            <div class="text-3xl sm:text-4xl font-extrabold leading-none">
+                                <span class="inline-block px-3 py-1 rounded-xl bg-rose-300/15 text-rose-300 border border-rose-300/30">0</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">vendor lock-in</div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="mt-8 relative rounded-2xl border-2 border-slate-200/10 bg-white/5 backdrop-blur px-6 py-7">
+                        <div class="absolute -top-3 left-6 inline-flex items-center px-3 py-1 rounded-lg border-2 border-slate-200/10 bg-slate-950 text-[11px] font-bold tracking-[0.22em] uppercase text-slate-200/80" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                            Manifesto
+                        </div>
+                        <div class="text-xl sm:text-2xl font-semibold leading-snug text-white">
+                            "The next generation of software won't be configured. It will be grown."
+                        </div>
+                        <div class="mt-4 text-slate-300/80">
+                            — Founding principle, 2025
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                            // Built into the platform
+                        </div>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Voice-first interviews</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Editable twin graph</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">One-click deploy</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Self-healing flows</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Audit trail by default</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Zero migrations</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">On-prem ready</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Open schema</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-14 pt-8 border-t border-slate-700/80 reveal">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold">
+                            Ready to <span class="italic text-emerald-300">grow</span> your stack?
+                        </div>
+                        <div class="mt-2 text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                            22 minutes to your first twin
+                        </div>
+                    </div>
+                    <a href="mailto:contact@altadigit.pro" data-action="book-interview" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl font-extrabold tracking-wide bg-emerald-300 text-slate-950 border-4 border-black alta-brut-shadow alta-cta-shadow-shift">
+                        <span>BOOK THE INTERVIEW</span>
+                        <span aria-hidden="true">→</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -566,11 +996,11 @@
                     <ul class="space-y-4 text-slate-400">
                         <li class="flex items-center gap-3">
                             <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
-                            <a href="mailto:contact@altadigit.ci" class="hover:text-white transition-colors">contact@altadigit.ci</a>
+                            <a href="mailto:contact@altadigit.pro" class="hover:text-white transition-colors">contact@altadigit.pro</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
-                            <span>Abidjan, Côte d'Ivoire</span>
+                            <i data-lucide="phone-pin" class="w-5 h-5 text-blue-400"></i>
+                            <span>+216 24 331 464</span>
                         </li>
                     </ul>
                 </div>
@@ -626,8 +1056,8 @@
       "@type": "ProfessionalService",
       "name": "Altadigit",
       "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      "@id": "https://altadigit.ci",
-      "url": "https://altadigit.ci",
+      "@id": "https://altadigit.pro",
+      "url": "https://altadigit.pro",
       "telephone": "",
       "address": {
         "@type": "PostalAddress",
