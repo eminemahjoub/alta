@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Logo Partenaire I">
+  <rect width="40" height="40" rx="10" fill="#0ea5e9"/>
+  <path d="M12 26V14h8l4 4v8H12z" fill="#ffffff" opacity="0.95"/>
+  <path d="M12 14l8 8" stroke="#0b1220" stroke-width="2.4" stroke-linecap="round" opacity="0.35"/>
+</svg>

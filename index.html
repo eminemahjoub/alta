@@ -75,11 +75,94 @@
         .scroll-wrapper {
             overflow: hidden;
             width: 100%;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
         .scroll-container:hover {
             animation-play-state: paused;
+        }
+
+        /* Safer fade edges for logo marquee (avoids mask issues) */
+        .logo-scroll-wrapper {
+            position: relative;
+            mask-image: none;
+            -webkit-mask-image: none;
+        }
+        .logo-scroll-wrapper::before,
+        .logo-scroll-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 64px;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .logo-scroll-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, rgba(248, 250, 252, 1), rgba(248, 250, 252, 0));
+        }
+        .logo-scroll-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, rgba(248, 250, 252, 1), rgba(248, 250, 252, 0));
+        }
+        .logo-scroll-wrapper .grayscale {
+            filter: none !important;
+        }
+        .logo-scroll-wrapper img {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            padding: 10px;
+            border-radius: 16px;
+            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+            opacity: 1;
+        }
+        .logo-scroll-wrapper {
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Logo wall (visible, responsive) */
+        .logo-wall {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+        @media (min-width: 640px) {
+            .logo-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        }
+        @media (min-width: 768px) {
+            .logo-wall { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+        }
+        @media (min-width: 1024px) {
+            .logo-wall { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+        }
+        .logo-tile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            padding: 18px;
+            min-height: 92px;
+            transition: transform 160ms ease, box-shadow 160ms ease;
+        }
+        .logo-tile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
+        }
+        .logo-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 74px;
+            object-fit: contain;
+            filter: contrast(1.06) saturate(1.05);
+        }
+        @media (min-width: 768px) {
+            .logo-tile { min-height: 110px; padding: 22px; }
+            .logo-img { max-height: 82px; }
         }
 
         /* Float Animation */
@@ -207,12 +290,21 @@
     <nav class="fixed top-0 w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <i data-lucide="layers" class="text-white w-6 h-6"></i>
-                    </div>
-                    <span class="text-2xl font-bold tracking-tight text-blue-900">Altadigit</span>
-                </div>
+                <a class="flex items-center" href="#top" aria-label="Altadigit — Accueil">
+                    <svg class="h-10 w-auto" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Altadigit">
+                        <g transform="translate(6,4)">
+                            <polygon points="20,6 8,36 20,30" fill="#2C2C3E"/>
+                            <polygon points="20,6 32,36 20,30" fill="#1A6CB7"/>
+                            <polygon points="20,6 36,26 32,36" fill="#3A9FE8"/>
+                            <polygon points="20,4 16,13 24,13" fill="#3A9FE8" opacity="0.9"/>
+                        </g>
+                        <text x="52" y="30" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#1C1C2E" letter-spacing="1">ALTADI</text>
+                        <text x="121" y="30" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#1A6CB7" letter-spacing="1">GIT</text>
+                        <text x="52" y="46" font-family="Arial,sans-serif" font-size="5.5" fill="#8899BB" letter-spacing="2.2">YOUR DIGITAL TRANSFORMATION PARTNER</text>
+                        <line x1="46" y1="44.5" x2="52" y2="44.5" stroke="#8899BB" stroke-width="0.5"/>
+                        <line x1="132" y1="44.5" x2="138" y2="44.5" stroke="#8899BB" stroke-width="0.5"/>
+                    </svg>
+                </a>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
@@ -220,7 +312,7 @@
                     <a href="#expertise" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Expertise</a>
                     <a href="#innovation" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Innovation</a>
                     <a href="#services" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Services</a>
-                    <a href="mailto:contact@altadigit.ci" class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">Contactez-nous</a>
+                    <a href="mailto:contact@altadigit.pro" class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">Contactez-nous</a>
                 </div>
 
                 <!-- Mobile Menu Toggle -->
@@ -847,62 +939,61 @@
         </div>
     </section>
 
-    <!-- Trusted By Section (Infinite Scroll) -->
+    <!-- Trusted By Section (Logo Wall) -->
     <section class="py-16 bg-slate-50 border-y border-slate-100 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
             <div class="text-center reveal">
                 <h2 class="text-sm font-bold tracking-widest text-slate-400 uppercase">Ils nous font confiance</h2>
             </div>
         </div>
-        
-        <div class="scroll-wrapper opacity-60">
-            <div class="scroll-container gap-16 md:gap-32 px-12 items-center">
-                <!-- Partner Set (Duplicated for infinite scroll) -->
-                <div class="flex gap-16 md:gap-32 items-center">
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">A</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE I</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">B</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE II</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">C</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE III</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center text-white font-bold">D</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE IV</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-rose-600 rounded-lg flex items-center justify-center text-white font-bold">E</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE V</span>
-                    </div>
-                </div>
-                <!-- Duplicate Partner Set -->
-                <div class="flex gap-16 md:gap-32 items-center">
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">A</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE I</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">B</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE II</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">C</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE III</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center text-white font-bold">D</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE IV</span>
-                    </div>
-                    <div class="flex items-center gap-3 whitespace-nowrap grayscale hover:grayscale-0 transition-all cursor-default">
-                        <div class="w-10 h-10 bg-rose-600 rounded-lg flex items-center justify-center text-white font-bold">E</div>
-                        <span class="text-xl font-bold text-slate-800">PARTENAIRE V</span>
-                    </div>
-                </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal logo-wall">
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 1">
+                    <img src="assets/logos/tds.jpeg" alt="Logo partenaire 1" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 2">
+                    <img src="assets/logos/yb.jpeg" alt="Logo partenaire 2" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 3">
+                    <img src="assets/logos/startupact.jpeg" alt="Logo partenaire 3" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 4">
+                    <img src="assets/logos/sintgra.jpeg" alt="Logo partenaire 4" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 5">
+                    <img src="assets/logos/mintech.jpeg" alt="Logo partenaire 5" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 6">
+                    <img src="assets/logos/dakhiliya.jpeg" alt="Logo partenaire 6" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 7">
+                    <img src="assets/logos/tamara.jpeg" alt="Logo partenaire 7" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 8">
+                    <img src="assets/logos/iteam.jpeg" alt="Logo partenaire 8" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 9">
+                    <img src="assets/logos/worldbank.jpeg" alt="Logo partenaire 9" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 10">
+                    <img src="assets/logos/clinque.jpeg" alt="Logo partenaire 10" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 11">
+                    <img src="assets/logos/lepidor.jpeg" alt="Logo partenaire 11" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 12">
+                    <img src="assets/logos/atb.jpeg" alt="Logo partenaire 12" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 13">
+                    <img src="assets/logos/bouabdeli.jpeg" alt="Logo partenaire 13" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 14">
+                    <img src="assets/logos/afkars.jpeg" alt="Logo partenaire 14" loading="lazy" decoding="async" class="logo-img">
+                </a>
+                <a href="#" data-action="partner-logo" class="logo-tile" aria-label="Logo partenaire 15">
+                    <img src="assets/logos/aaqarplus.jpeg" alt="Logo partenaire 15" loading="lazy" decoding="async" class="logo-img">
+                </a>
             </div>
         </div>
     </section>
