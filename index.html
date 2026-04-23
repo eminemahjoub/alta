@@ -35,9 +35,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        :root {
+            --alta-brand: #1A6CB7;
+            --alta-brand-2: #3A9FE8;
+            --alta-ink: #0f172a; /* slate-900 */
+            --alta-muted: #475569; /* slate-600 */
+            --alta-surface: #ffffff;
+            --alta-surface-2: #f8fafc; /* slate-50 */
+            --alta-border: rgba(15, 23, 42, 0.10);
+            --alta-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #f8fafc;
+        }
+
+        /* --- Alta UI kit (shared look across sections) --- */
+        .alta-section-title {
+            letter-spacing: -0.02em;
+        }
+        .alta-lead {
+            color: var(--alta-muted);
+        }
+        .alta-card {
+            background: var(--alta-surface);
+            border: 1px solid var(--alta-border);
+            box-shadow: var(--alta-shadow);
+        }
+        .alta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 0.9rem;
+            font-weight: 800;
+            transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+        }
+        .alta-btn:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(26, 108, 183, 0.22);
+        }
+        .alta-btn-primary {
+            background: var(--alta-ink);
+            color: #fff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
+        }
+        .alta-btn-primary:hover {
+            transform: translateY(-1px);
+            background: #0b1220;
+            box-shadow: 0 20px 44px rgba(15, 23, 42, 0.20);
+        }
+        .alta-btn-secondary {
+            background: rgba(26, 108, 183, 0.08);
+            color: var(--alta-ink);
+            border: 1px solid rgba(26, 108, 183, 0.18);
+        }
+        .alta-btn-secondary:hover {
+            transform: translateY(-1px);
+            background: rgba(26, 108, 183, 0.12);
         }
         .glass-nav {
             background: rgba(255, 255, 255, 0.8);
@@ -358,11 +415,11 @@
                         Altadigit accompagne les organisations dans leur <strong class="font-semibold text-slate-800">transformation digitale</strong> et l’<strong class="font-semibold text-slate-800">optimisation des workflows</strong> grâce à l’<strong class="font-semibold text-slate-800">intelligence artificielle entreprise</strong>, l’<strong class="font-semibold text-slate-800">automatisation IA</strong> et des solutions d’identité numérique pour digitaliser, automatiser et sécuriser vos opérations.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#services" class="flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all text-lg group">
+                        <a href="#services" class="alta-btn alta-btn-primary flex items-center justify-center px-8 py-4 text-lg group">
                             Découvrir nos solutions
                             <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="#about" class="flex items-center justify-center gap-2 bg-slate-100 text-slate-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-200 transition-all text-lg">
+                        <a href="#about" class="alta-btn alta-btn-secondary flex items-center justify-center px-8 py-4 text-lg">
                             Notre vision
                         </a>
                     </div>
@@ -409,37 +466,37 @@
                     <div class="alta-marquee-row text-xs sm:text-sm font-semibold tracking-wide">
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>Audit & diagnostic</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>Roadmap & priorisation</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>Conduite du changement</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>PMO & gouvernance</span>
                         </span>
                     </div>
                     <div class="alta-marquee-row text-xs sm:text-sm font-semibold tracking-wide" aria-hidden="true">
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>Architecture & migration</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>Observabilité & exploitation</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>Cybersécurité</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Système fragmenté • 14 outils, 0 synchro • État : dégradé</span>
+                            <span>Continuité d'activité</span>
                         </span>
                     </div>
                 </div>
@@ -959,65 +1016,11 @@
         </div>
     </section>
 
-        <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Nos Services</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Un accompagnement complet pour votre <strong class="font-semibold text-slate-800">transformation digitale</strong>, votre <strong class="font-semibold text-slate-800">efficacité opérationnelle</strong> et vos enjeux d’<strong class="font-semibold text-slate-800">automatisation IA</strong> et d’infrastructure.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Strategy & Gov -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 reveal">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="briefcase" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Stratégie, Gouvernance & SI</h3>
-                    <ul class="space-y-3 text-slate-600 mb-8">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Audit & diagnostic</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Roadmap & priorisation</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Conduite du changement</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> PMO & gouvernance</li>
-                    </ul>
-                </div>
-
-                <!-- Custom Dev -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 reveal delay-100">
-                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="code" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Développement sur mesure</h3>
-                    <ul class="space-y-3 text-slate-600 mb-8">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Sites & plateformes</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Applications métier</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Intégrations & APIs</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> UX/UI Design</li>
-                    </ul>
-                </div>
-
-                <!-- Cloud & Infra -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 reveal delay-200">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="server" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Cloud & Infrastructure</h3>
-                    <ul class="space-y-3 text-slate-600 mb-8">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Architecture & migration</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Observabilité & exploitation</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Cybersécurité</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Continuité d'activité</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ technique & sécurité -->
     <section id="faq" class="py-24 bg-slate-50 border-t border-slate-100" aria-labelledby="faq-heading">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
-                <h2 id="faq-heading" class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">FAQ — Technologie &amp; sécurité</h2>
+                <h2 id="faq-heading" class="alta-section-title text-3xl lg:text-4xl font-bold text-slate-900 mb-3">FAQ — Technologie &amp; sécurité</h2>
                 <p class="text-slate-600">Réponses synthétiques pour DSI, architectes et RSSI. Pour un dossier détaillé, <a href="mailto:contact@altadigit.pro" class="text-blue-600 font-semibold hover:underline">contactez-nous</a>.</p>
             </div>
             <div class="space-y-3 reveal">
@@ -1057,6 +1060,60 @@
                         <strong class="text-slate-800">Schéma ouvert</strong> : vos données et modèles restent interopérables (formats documentés, exports), vous évitez une dépendance opaque à un silo fermé. <strong class="text-slate-800">Prêt on-prem</strong> : possibilité d’exécuter tout ou partie de la solution dans votre infrastructure pour la souveraineté, la latence ou les contraintes sectorielles.
                     </div>
                 </details>
+            </div>
+        </div>
+    </section>
+
+        <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="alta-section-title text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Nos Services</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Un accompagnement complet pour votre <strong class="font-semibold text-slate-800">transformation digitale</strong>, votre <strong class="font-semibold text-slate-800">efficacité opérationnelle</strong> et vos enjeux d’<strong class="font-semibold text-slate-800">automatisation IA</strong> et d’infrastructure.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Strategy & Gov -->
+                <div class="alta-card p-8 rounded-3xl reveal">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Stratégie, Gouvernance & SI</h3>
+                    <ul class="space-y-3 text-slate-600 mb-8">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Audit & diagnostic</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Roadmap & priorisation</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Conduite du changement</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> PMO & gouvernance</li>
+                    </ul>
+                </div>
+
+                <!-- Custom Dev -->
+                <div class="alta-card p-8 rounded-3xl reveal delay-100">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="code" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Développement sur mesure</h3>
+                    <ul class="space-y-3 text-slate-600 mb-8">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Sites & plateformes</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Applications métier</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Intégrations & APIs</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> UX/UI Design</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud & Infra -->
+                <div class="alta-card p-8 rounded-3xl reveal delay-200">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="server" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Cloud & Infrastructure</h3>
+                    <ul class="space-y-3 text-slate-600 mb-8">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Architecture & migration</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Observabilité & exploitation</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Cybersécurité</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Continuité d'activité</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
