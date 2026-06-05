@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" dir="ltr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Standard -->
-    <title>Altadigit | Transformation digitale, automatisation IA & jumeau numérique</title>
+    <title data-i18n="meta.title">Altadigit | Transformation digitale, automatisation IA & jumeau numérique</title>
     <meta name="description" content="Altadigit : transformation digitale, intelligence artificielle entreprise, automatisation IA et optimisation des workflows. eKYC, signature électronique, efficacité opérationnelle et solution jumeau numérique (digital twin) pour votre SI.">
     <meta name="keywords" content="transformation digitale, automatisation IA, optimisation workflow, efficacité opérationnelle, intelligence artificielle entreprise, digital twin solution, jumeau numérique, eKYC, signature électronique, CRM, cybersécurité">
     <meta name="author" content="Altadigit">
@@ -224,6 +224,20 @@
             .logo-img { max-height: 82px; }
         }
 
+        /* RTL Support */
+        [dir="rtl"] .ltr-only { display: none; }
+        [dir="ltr"] .rtl-only { display: none; }
+        [dir="rtl"] .border-l-4 { border-left-width: 0; border-right-width: 4px; }
+        [dir="rtl"] .pl-5 { padding-left: 0; padding-right: 1.25rem; }
+        [dir="rtl"] .pl-10 { padding-left: 0; padding-right: 2.5rem; }
+        [dir="rtl"] .hero-float-badge { left: auto !important; right: 1.5rem !important; }
+        [dir="rtl"] .deco-right { right: auto !important; left: -5rem !important; }
+        [dir="rtl"] .deco-bottom { right: auto !important; left: -1.5rem !important; }
+        [dir="rtl"] .deco-left { left: auto !important; right: -3rem !important; }
+        [dir="rtl"] [data-lucide="arrow-right"],
+        [dir="rtl"] [data-lucide="chevron-right"] { transform: scaleX(-1); }
+        [dir="rtl"] .group:hover [data-lucide="arrow-right"] { transform: scaleX(-1) translateX(-4px); }
+
         /* Float Animation */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -359,7 +373,7 @@
                         </g>
                         <text x="52" y="30" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#1C1C2E" letter-spacing="1">ALTADI</text>
                         <text x="121" y="30" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#1A6CB7" letter-spacing="1">GIT</text>
-                        <text x="52" y="46" font-family="Arial,sans-serif" font-size="5.5" fill="#8899BB" letter-spacing="2.2">YOUR DIGITAL TRANSFORMATION PARTNER</text>
+                        <text data-i18n="logo.tagline" x="52" y="46" font-family="Arial,sans-serif" font-size="5.5" fill="#8899BB" letter-spacing="2.2">YOUR DIGITAL TRANSFORMATION PARTNER</text>
                         <line x1="46" y1="44.5" x2="52" y2="44.5" stroke="#8899BB" stroke-width="0.5"/>
                         <line x1="132" y1="44.5" x2="138" y2="44.5" stroke="#8899BB" stroke-width="0.5"/>
                     </svg>
@@ -367,12 +381,20 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">À Propos</a>
-                    <a href="#expertise" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Expertise</a>
-                    <a href="#innovation" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Innovation</a>
-                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">FAQ</a>
-                    <a href="#services" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Services</a>
-                    <a href="mailto:contact@altadigit.pro" class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">Contactez-nous</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" data-i18n="nav.about">À Propos</a>
+                    <a href="#expertise" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" data-i18n="nav.expertise">Expertise</a>
+                    <a href="#innovation" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" data-i18n="nav.innovation">Innovation</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" data-i18n="nav.faq">FAQ</a>
+                    <a href="#services" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" data-i18n="nav.services">Services</a>
+                    <a href="mailto:contact@altadigit.pro" class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg" data-i18n="nav.contact">Contactez-nous</a>
+                    <!-- Language Switcher -->
+                    <div class="flex items-center border-l border-slate-200 pl-6">
+                        <button data-lang="fr" class="lang-btn text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors px-1.5" aria-label="Français">FR</button>
+                        <span class="text-slate-300 mx-1">/</span>
+                        <button data-lang="en" class="lang-btn text-sm font-medium text-slate-400 hover:text-blue-600 transition-colors px-1.5" aria-label="English">EN</button>
+                        <span class="text-slate-300 mx-1">/</span>
+                        <button data-lang="ar" class="lang-btn text-sm font-medium text-slate-400 hover:text-blue-600 transition-colors px-1.5" aria-label="العربية">AR</button>
+                    </div>
                 </div>
 
                 <!-- Mobile Menu Toggle -->
@@ -385,13 +407,19 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4" aria-label="Menu mobile">
-            <a href="#about" class="block text-base font-medium text-slate-600">À Propos</a>
-            <a href="#expertise" class="block text-base font-medium text-slate-600">Expertise</a>
-            <a href="#innovation" class="block text-base font-medium text-slate-600">Innovation</a>
-            <a href="#faq" class="block text-base font-medium text-slate-600">FAQ</a>
-            <a href="#services" class="block text-base font-medium text-slate-600">Services</a>
-            <a href="mailto:contact@altadigit.ci" class="block bg-blue-600 text-white px-5 py-2.5 rounded-lg text-center font-semibold">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4" aria-label="Menu mobile" data-i18n="nav.mobileMenuLabel">
+            <a href="#about" class="block text-base font-medium text-slate-600" data-i18n="nav.about">À Propos</a>
+            <a href="#expertise" class="block text-base font-medium text-slate-600" data-i18n="nav.expertise">Expertise</a>
+            <a href="#innovation" class="block text-base font-medium text-slate-600" data-i18n="nav.innovation">Innovation</a>
+            <a href="#faq" class="block text-base font-medium text-slate-600" data-i18n="nav.faq">FAQ</a>
+            <a href="#services" class="block text-base font-medium text-slate-600" data-i18n="nav.services">Services</a>
+            <a href="mailto:contact@altadigit.pro" class="block bg-blue-600 text-white px-5 py-2.5 rounded-lg text-center font-semibold" data-i18n="nav.contact">Contact</a>
+            <!-- Language Switcher Mobile -->
+            <div class="flex items-center justify-center gap-2 pt-4 border-t border-slate-100">
+                <button data-lang="fr" class="lang-btn text-sm font-semibold text-blue-600 px-3 py-1.5 rounded-lg bg-blue-50" aria-label="Français">FR</button>
+                <button data-lang="en" class="lang-btn text-sm font-medium text-slate-500 px-3 py-1.5 rounded-lg hover:bg-slate-100" aria-label="English">EN</button>
+                <button data-lang="ar" class="lang-btn text-sm font-medium text-slate-500 px-3 py-1.5 rounded-lg hover:bg-slate-100" aria-label="العربية">AR</button>
+            </div>
         </div>
     </nav>
 
@@ -405,21 +433,21 @@
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                         </span>
-                        Transformation Digitale
+                        <span data-i18n="hero.badge">Transformation Digitale</span>
                     </div>
-                    <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6" data-i18n="hero.title">
                         Votre Transformation Digitale, <br>
                         <span class="gradient-text">du cadrage à la livraison</span>
                     </h1>
-                    <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+                    <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl" data-i18n="hero.subtitle">
                         Altadigit accompagne les organisations dans leur <strong class="font-semibold text-slate-800">transformation digitale</strong> et l’<strong class="font-semibold text-slate-800">optimisation des workflows</strong> grâce à l’<strong class="font-semibold text-slate-800">intelligence artificielle entreprise</strong>, l’<strong class="font-semibold text-slate-800">automatisation IA</strong> et des solutions d’identité numérique pour digitaliser, automatiser et sécuriser vos opérations.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#services" class="alta-btn alta-btn-primary flex items-center justify-center px-8 py-4 text-lg group">
+                        <a href="#services" class="alta-btn alta-btn-primary flex items-center justify-center px-8 py-4 text-lg group" data-i18n="hero.cta1">
                             Découvrir nos solutions
                             <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="#about" class="alta-btn alta-btn-secondary flex items-center justify-center px-8 py-4 text-lg">
+                        <a href="#about" class="alta-btn alta-btn-secondary flex items-center justify-center px-8 py-4 text-lg" data-i18n="hero.cta2">
                             Notre vision
                         </a>
                     </div>
@@ -431,24 +459,24 @@
                     <!-- Main Hero Image -->
                     <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
                         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" 
-                             alt="Altadigit Digital Transformation" 
+                             alt="Altadigit Digital Transformation" data-i18n="hero.imageAlt" 
                              class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
                         
                         <!-- Floating Badge on Image -->
-                        <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-white/50">
+                        <div class="hero-float-badge absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-white/50">
                             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white">
                                 <i data-lucide="shield-check" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Expertise</div>
-                                <div class="text-sm font-bold text-slate-900">Confiance Digitale</div>
+                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1" data-i18n="hero.badgeLabel">Expertise</div>
+                                <div class="text-sm font-bold text-slate-900" data-i18n="hero.badgeValue">Confiance Digitale</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Decorative elements -->
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 rounded-3xl -z-10 animate-bounce transition-all duration-[3000ms]"></div>
-                    <div class="absolute top-1/2 -left-12 w-24 h-24 bg-slate-100 border border-slate-200 rounded-2xl p-4 shadow-lg hidden lg:block animate-float">
+                    <div class="deco-bottom absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 rounded-3xl -z-10 animate-bounce transition-all duration-[3000ms]"></div>
+                    <div class="deco-left absolute top-1/2 -left-12 w-24 h-24 bg-slate-100 border border-slate-200 rounded-2xl p-4 shadow-lg hidden lg:block animate-float">
                         <i data-lucide="cpu" class="w-full h-full text-blue-600 opacity-50"></i>
                     </div>
                 </div>
@@ -466,37 +494,37 @@
                     <div class="alta-marquee-row text-xs sm:text-sm font-semibold tracking-wide">
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Audit & diagnostic</span>
+                            <span data-i18n="marquee.audit">Audit & diagnostic</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Roadmap & priorisation</span>
+                            <span data-i18n="marquee.roadmap">Roadmap & priorisation</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Conduite du changement</span>
+                            <span data-i18n="marquee.change">Conduite du changement</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>PMO & gouvernance</span>
+                            <span data-i18n="marquee.pmo">PMO & gouvernance</span>
                         </span>
                     </div>
                     <div class="alta-marquee-row text-xs sm:text-sm font-semibold tracking-wide" aria-hidden="true">
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Architecture & migration</span>
+                            <span data-i18n="marquee.architecture">Architecture & migration</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Observabilité & exploitation</span>
+                            <span data-i18n="marquee.observability">Observabilité & exploitation</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Cybersécurité</span>
+                            <span data-i18n="marquee.cyber">Cybersécurité</span>
                         </span>
                         <span class="inline-flex items-center gap-2 px-6">
                             <span class="text-red-400">⚠</span>
-                            <span>Continuité d'activité</span>
+                            <span data-i18n="marquee.continuity">Continuité d'activité</span>
                         </span>
                     </div>
                 </div>
@@ -512,14 +540,14 @@
                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
                     </span>
                     <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-700/80" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
-                        Section 01 — Le diagnostic
+                        <span data-i18n="diagnostic.sectionLabel">Section 01 — Le diagnostic</span>
                     </div>
                 </div>
 
                 <!-- Headline + support -->
                 <div class="mt-8 grid lg:grid-cols-12 gap-10 items-start reveal">
                     <div class="lg:col-span-8">
-                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.05] tracking-tight">
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.05] tracking-tight" data-i18n="diagnostic.headline">
                             Votre stack technique est
                             <span class="relative inline-block align-baseline">
                                 <span class="italic text-red-600">fissurée</span>
@@ -528,18 +556,18 @@
                                     <path d="M8 20C40 10 62 22 92 14C122 6 144 22 174 14C196 8 210 12 218 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
                                 </svg>
                             </span>.
-                            Vous avez fini par <span class="font-light text-slate-500">ne plus y prêter attention</span>.
+                            <span data-i18n="diagnostic.headline2">Vous avez fini par <span class="font-light text-slate-500">ne plus y prêter attention</span>.</span>
                         </h2>
                     </div>
                     <div class="lg:col-span-4">
-                        <p class="text-lg text-slate-600 leading-relaxed">
+                        <p class="text-lg text-slate-600 leading-relaxed" data-i18n="diagnostic.support">
                             Ce n’est pas de la productivité : c’est de l’archéologie entre outils hétérogènes.
                         </p>
                         <div class="mt-6 border-l-4 border-slate-900 pl-5">
-                            <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-500" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                            <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-500" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="diagnostic.expressLabel">
                                 Bilan express
                             </div>
-                            <div class="mt-2 text-sm text-slate-700">
+                            <div class="mt-2 text-sm text-slate-700" data-i18n="diagnostic.expressText">
                                 L’information est éclatée, la responsabilité floue, et l’écart entre « théorie » et pratique devient la norme.
                             </div>
                         </div>
@@ -553,18 +581,18 @@
                         <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
                         <div class="flex items-start justify-between gap-4">
                             <div>
-                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">CRM</div>
-                                <div class="mt-2 text-sm text-slate-600">Salesforce / HubSpot</div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;"><span data-i18n="diagnostic.card1Label">CRM</span></div>
+                                <div class="mt-2 text-sm text-slate-600" data-i18n="diagnostic.card1Sub">Salesforce / HubSpot</div>
                             </div>
                             <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
                                 <span aria-hidden="true">⚠</span>
-                                <span class="text-slate-900">Problème</span>
+                                <span class="text-slate-900" data-i18n="diagnostic.problemLabel">Problème</span>
                             </span>
                         </div>
-                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">23 champs personnalisés ignorés</div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug" data-i18n="diagnostic.card1Desc">23 champs personnalisés ignorés</div>
                         <div class="mt-6 flex items-end justify-between gap-4">
                             <div class="text-3xl font-extrabold text-slate-900 leading-none">67%</div>
-                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">données inutilisées</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="diagnostic.card1Stat">données inutilisées</div>
                         </div>
                     </button>
 
@@ -573,18 +601,18 @@
                         <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
                         <div class="flex items-start justify-between gap-4">
                             <div>
-                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">Tableurs</div>
-                                <div class="mt-2 text-sm text-slate-600">La base « parallèle »</div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;"><span data-i18n="diagnostic.card2Label">Tableurs</span></div>
+                                <div class="mt-2 text-sm text-slate-600" data-i18n="diagnostic.card2Sub">La base « parallèle »</div>
                             </div>
                             <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
                                 <span aria-hidden="true">⚠</span>
-                                <span class="text-slate-900">Problème</span>
+                                <span class="text-slate-900" data-i18n="diagnostic.problemLabel">Problème</span>
                             </span>
                         </div>
-                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">Dernière modif : il y a 3 semaines</div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug" data-i18n="diagnostic.card2Desc">Dernière modif : il y a 3 semaines</div>
                         <div class="mt-6 flex items-end justify-between gap-4">
                             <div class="text-2xl font-extrabold text-slate-900 leading-none">v17_FINAL_v2</div>
-                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">version « officielle »</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="diagnostic.card2Stat">version « officielle »</div>
                         </div>
                     </button>
 
@@ -593,18 +621,18 @@
                         <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
                         <div class="flex items-start justify-between gap-4">
                             <div>
-                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">Automatisations</div>
-                                <div class="mt-2 text-sm text-slate-600">Zapier / Make</div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;"><span data-i18n="diagnostic.card3Label">Automatisations</span></div>
+                                <div class="mt-2 text-sm text-slate-600" data-i18n="diagnostic.card3Sub">Zapier / Make</div>
                             </div>
                             <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
                                 <span aria-hidden="true">⚠</span>
-                                <span class="text-slate-900">Problème</span>
+                                <span class="text-slate-900" data-i18n="diagnostic.problemLabel">Problème</span>
                             </span>
                         </div>
-                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">Webhook en échec à 03:42</div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug" data-i18n="diagnostic.card3Desc">Webhook en échec à 03:42</div>
                         <div class="mt-6 flex items-end justify-between gap-4">
                             <div class="text-3xl font-extrabold text-slate-900 leading-none">412</div>
-                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">erreurs cette semaine</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="diagnostic.card3Stat">erreurs cette semaine</div>
                         </div>
                     </button>
 
@@ -613,18 +641,18 @@
                         <div class="alta-glitch-lines absolute inset-0 rounded-2xl pointer-events-none" aria-hidden="true"></div>
                         <div class="flex items-start justify-between gap-4">
                             <div>
-                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">Assistant IA</div>
-                                <div class="mt-2 text-sm text-slate-600">Assistant générique sans contexte métier</div>
+                                <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;"><span data-i18n="diagnostic.card4Label">Assistant IA</span></div>
+                                <div class="mt-2 text-sm text-slate-600" data-i18n="diagnostic.card4Sub">Assistant générique sans contexte métier</div>
                             </div>
                             <span class="inline-flex items-center gap-2 text-red-700 font-semibold text-sm">
                                 <span aria-hidden="true">⚠</span>
-                                <span class="text-slate-900">Problème</span>
+                                <span class="text-slate-900" data-i18n="diagnostic.problemLabel">Problème</span>
                             </span>
                         </div>
-                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug">Ne connaît pas votre activité</div>
+                        <div class="mt-4 text-base font-semibold text-slate-900 leading-snug" data-i18n="diagnostic.card4Desc">Ne connaît pas votre activité</div>
                         <div class="mt-6 flex items-end justify-between gap-4">
                             <div class="text-3xl font-extrabold text-slate-900 leading-none">0%</div>
-                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">contexte métier</div>
+                            <div class="text-[11px] tracking-[0.22em] uppercase text-slate-500 font-bold text-right" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="diagnostic.card4Stat">contexte métier</div>
                         </div>
                     </button>
                 </div>
@@ -639,13 +667,13 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="mt-6 text-2xl sm:text-3xl font-extrabold text-slate-900">
+                    <div class="mt-6 text-2xl sm:text-3xl font-extrabold text-slate-900" data-i18n="diagnostic.ctaQuestion">
                         Et si vos outils comprenaient vraiment ce que vous faites ?
                     </div>
                     <div class="mt-6">
                         <a href="#innovation" data-action="show-alternative" class="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl font-extrabold tracking-wide border-4 border-black alta-brut-shadow alta-cta-shadow-shift focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-900/20">
                             <span aria-hidden="true">⚡</span>
-                            <span>VOIR L’ALTERNATIVE</span>
+                            <span data-i18n="diagnostic.ctaButton">VOIR L’ALTERNATIVE</span>
                         </a>
                     </div>
                 </div>
@@ -663,23 +691,23 @@
                     <path d="M18.5 13.5l.8 3.4 3.2.6-3.1.7-.9 3.3-.9-3.3-3.1-.7 3.2-.6.8-3.4z" fill="currentColor" opacity="0.55"/>
                 </svg>
                 <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-200/80" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
-                    Section 02 — La réponse
+                    <span data-i18n="innovation.sectionLabel">Section 02 — La réponse</span>
                 </div>
             </div>
 
             <!-- Headline -->
             <div class="mt-8 grid lg:grid-cols-12 gap-10 items-start reveal">
                 <div class="lg:col-span-7">
-                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight" data-i18n="innovation.headline">
                         Des outils qui <span class="italic text-emerald-300">s’adaptent</span> <span class="font-light text-slate-300">à vous</span>.
                     </h2>
                 </div>
                 <div class="lg:col-span-5">
-                    <p class="text-lg text-slate-300 leading-relaxed">
+                    <p class="text-lg text-slate-300 leading-relaxed" data-i18n="innovation.subtitle">
                         Rencontrez votre <span class="text-emerald-300 font-semibold">jumeau numérique</span> (<span lang="en">Digital Twin</span>) — un modèle vivant de la façon dont votre activité fonctionne vraiment.
                     </p>
                     <div class="mt-6 border-l-4 border-emerald-300/80 pl-5">
-                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="innovation.manifesto">
                             Des logiciels calés sur la réalité — pas l’inverse.
                         </div>
                     </div>
@@ -705,15 +733,15 @@
                                     </div>
                                     <div>
                                         <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">01</div>
-                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">Entretien IA</h3>
-                                        <div class="mt-2 text-slate-300">Une conversation, pas un formulaire. L’IA cartographie comment vous travaillez vraiment — contournements, règles implicites.</div>
-                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Détail :</span> Voix ou texte, sans script figé.</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors" data-i18n="innovation.step1Title">Entretien IA</h3>
+                                        <div class="mt-2 text-slate-300" data-i18n="innovation.step1Desc">Une conversation, pas un formulaire. L’IA cartographie comment vous travaillez vraiment — contournements, règles implicites.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200" data-i18n="innovation.detailLabel">Détail :</span> <span data-i18n="innovation.step1Detail">Voix ou texte, sans script figé.</span></div>
                                     </div>
                                 </div>
                                 <div class="shrink-0 text-right">
-                                    <div class="text-sm font-semibold text-slate-200">~22 min</div>
+                                    <div class="text-sm font-semibold text-slate-200" data-i18n="innovation.time1">~22 min</div>
                                     <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span class="text-sm font-semibold">Ouvrir</span>
+                                        <span class="text-sm font-semibold" data-i18n="innovation.open">Ouvrir</span>
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -734,15 +762,15 @@
                                     </div>
                                     <div>
                                         <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">02</div>
-                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">Modélisation du jumeau</h3>
-                                        <div class="mt-2 text-slate-300">Vos opérations deviennent un graphe vivant, capturé tel qu’il existe aujourd’hui.</div>
-                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Détail :</span> Éditable, versionné, à vous.</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors" data-i18n="innovation.step2Title">Modélisation du jumeau</h3>
+                                        <div class="mt-2 text-slate-300" data-i18n="innovation.step2Desc">Vos opérations deviennent un graphe vivant, capturé tel qu’il existe aujourd’hui.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200" data-i18n="innovation.detailLabel">Détail :</span> <span data-i18n="innovation.step2Detail">Éditable, versionné, à vous.</span></div>
                                     </div>
                                 </div>
                                 <div class="shrink-0 text-right">
-                                    <div class="text-sm font-semibold text-slate-200">Temps réel</div>
+                                    <div class="text-sm font-semibold text-slate-200" data-i18n="innovation.time2">Temps réel</div>
                                     <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span class="text-sm font-semibold">Ouvrir</span>
+                                        <span class="text-sm font-semibold" data-i18n="innovation.open">Ouvrir</span>
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -764,15 +792,15 @@
                                     </div>
                                     <div>
                                         <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">03</div>
-                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">Génération d’outils</h3>
-                                        <div class="mt-2 text-slate-300">Interfaces, automatisations et tableaux de bord générés à partir de votre jumeau.</div>
-                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Détail :</span> Déployé dans votre stack existante.</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors" data-i18n="innovation.step3Title">Génération d'outils</h3>
+                                        <div class="mt-2 text-slate-300" data-i18n="innovation.step3Desc">Interfaces, automatisations et tableaux de bord générés à partir de votre jumeau.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200" data-i18n="innovation.detailLabel">Détail :</span> <span data-i18n="innovation.step3Detail">Déployé dans votre stack existante.</span></div>
                                     </div>
                                 </div>
                                 <div class="shrink-0 text-right">
                                     <div class="text-sm font-semibold text-slate-200">&lt; 60 sec</div>
                                     <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span class="text-sm font-semibold">Ouvrir</span>
+                                        <span class="text-sm font-semibold" data-i18n="innovation.open">Ouvrir</span>
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -794,15 +822,15 @@
                                     </div>
                                     <div>
                                         <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-400" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">04</div>
-                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">Amélioration continue</h3>
-                                        <div class="mt-2 text-slate-300">Chaque interaction affine le jumeau : l’écart entre théorie et pratique devient un signal utile.</div>
-                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200">Détail :</span> Apprentissage à partir de l’usage réel.</div>
+                                        <h3 class="mt-1 text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors" data-i18n="innovation.step4Title">Amélioration continue</h3>
+                                        <div class="mt-2 text-slate-300" data-i18n="innovation.step4Desc">Chaque interaction affine le jumeau : l’écart entre théorie et pratique devient un signal utile.</div>
+                                        <div class="mt-3 text-sm text-slate-400"><span class="font-semibold text-slate-200" data-i18n="innovation.detailLabel">Détail :</span> <span data-i18n="innovation.step4Detail">Apprentissage à partir de l’usage réel.</span></div>
                                     </div>
                                 </div>
                                 <div class="shrink-0 text-right">
-                                    <div class="text-sm font-semibold text-slate-200">En continu</div>
+                                    <div class="text-sm font-semibold text-slate-200" data-i18n="innovation.time4">En continu</div>
                                     <div class="mt-3 inline-flex items-center gap-2 text-emerald-300/90 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span class="text-sm font-semibold">Ouvrir</span>
+                                        <span class="text-sm font-semibold" data-i18n="innovation.open">Ouvrir</span>
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -821,7 +849,7 @@
                                 <span class="inline-block px-3 py-1 rounded-xl bg-emerald-300/15 text-emerald-300 border border-emerald-300/30">94%</span>
                             </div>
                             <div class="text-right">
-                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">moins de changements d’outil</div>
+                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="innovation.stat1">moins de changements d’outil</div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-700/70 bg-slate-900/25 px-5 py-4">
@@ -829,7 +857,7 @@
                                 <span class="inline-block px-3 py-1 rounded-xl bg-amber-300/15 text-amber-300 border border-amber-300/30">12×</span>
                             </div>
                             <div class="text-right">
-                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">déploiement d’outils plus rapide</div>
+                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="innovation.stat2">déploiement d’outils plus rapide</div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between gap-4 rounded-2xl border border-slate-700/70 bg-slate-900/25 px-5 py-4">
@@ -837,36 +865,36 @@
                                 <span class="inline-block px-3 py-1 rounded-xl bg-rose-300/15 text-rose-300 border border-rose-300/30">0</span>
                             </div>
                             <div class="text-right">
-                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">enfermement fournisseur</div>
+                                <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="innovation.stat3">enfermement fournisseur</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-8 relative rounded-2xl border-2 border-slate-200/10 bg-white/5 backdrop-blur px-6 py-7">
-                        <div class="absolute -top-3 left-6 inline-flex items-center px-3 py-1 rounded-lg border-2 border-slate-200/10 bg-slate-950 text-[11px] font-bold tracking-[0.22em] uppercase text-slate-200/80" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                        <div class="absolute -top-3 left-6 inline-flex items-center px-3 py-1 rounded-lg border-2 border-slate-200/10 bg-slate-950 text-[11px] font-bold tracking-[0.22em] uppercase text-slate-200/80" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="innovation.manifestoLabel">
                             Manifeste
                         </div>
-                        <div class="text-xl sm:text-2xl font-semibold leading-snug text-white">
+                        <div class="text-xl sm:text-2xl font-semibold leading-snug text-white" data-i18n="innovation.manifestoQuote">
                             « La prochaine génération de logiciels ne se limitera pas à être configurée : elle grandira avec votre activité. »
                         </div>
-                        <div class="mt-4 text-slate-300/80">
+                        <div class="mt-4 text-slate-300/80" data-i18n="innovation.manifestoAttr">
                             — Principe fondateur, 2025
                         </div>
                     </div>
 
                     <div class="mt-8">
-                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                        <div class="text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="innovation.includedLabel">
                             // Inclus dans la plateforme
                         </div>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Entretiens d’abord en voix</a>
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Graphe jumeau éditable</a>
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Déploiement en un clic</a>
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Flux auto-correctifs</a>
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Piste d’audit native</a>
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Sans migration forcée</a>
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Prêt on-prem</a>
-                            <a href="#innovation" data-action="feature-pill" class="alta-pill">Schéma ouvert</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill1">Entretiens d’abord en voix</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill2">Graphe jumeau éditable</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill3">Déploiement en un clic</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill4">Flux auto-correctifs</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill5">Piste d’audit native</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill6">Sans migration forcée</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill7">Prêt on-prem</a>
+                            <a href="#innovation" data-action="feature-pill" class="alta-pill" data-i18n="innovation.pill8">Schéma ouvert</a>
                         </div>
                     </div>
                 </div>
@@ -875,15 +903,15 @@
             <div class="mt-14 pt-8 border-t border-slate-700/80 reveal">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                     <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold">
+                        <div class="text-2xl sm:text-3xl font-extrabold" data-i18n="innovation.ctaTitle">
                             Prêt à <span class="italic text-emerald-300">faire évoluer</span> votre stack ?
                         </div>
-                        <div class="mt-2 text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+                        <div class="mt-2 text-[11px] font-bold tracking-[0.22em] uppercase text-slate-300/70" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" data-i18n="innovation.ctaSub">
                             22 minutes vers un premier jumeau
                         </div>
                     </div>
                     <a href="mailto:contact@altadigit.pro" data-action="book-interview" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl font-extrabold tracking-wide bg-emerald-300 text-slate-950 border-4 border-black alta-brut-shadow alta-cta-shadow-shift">
-                        <span>RÉSERVER L’ENTRETIEN</span>
+                        <span data-i18n="innovation.ctaButton">RÉSERVER L’ENTRETIEN</span>
                         <span aria-hidden="true">→</span>
                     </a>
                 </div>
@@ -896,19 +924,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-20">
                 <div class="reveal">
-                    <h2 class="text-3xl font-bold mb-8">Nos Objectifs</h2>
+                    <h2 class="text-3xl font-bold mb-8" data-i18n="goals.title">Nos Objectifs</h2>
                     <div class="space-y-6">
                         <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl">
                             <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center shrink-0 mt-1">
                                 <i data-lucide="check" class="w-4 h-4 text-white"></i>
                             </div>
-                            <p class="text-slate-700">Accélérer la transformation digitale et simplifier les processus opérationnels.</p>
+                            <p class="text-slate-700" data-i18n="goals.item1">Accélérer la transformation digitale et simplifier les processus opérationnels.</p>
                         </div>
                         <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl">
                             <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center shrink-0 mt-1">
                                 <i data-lucide="check" class="w-4 h-4 text-white"></i>
                             </div>
-                            <p class="text-slate-700">Renforcer la confiance digitale et réduire drastiquement les risques de fraude.</p>
+                            <p class="text-slate-700" data-i18n="goals.item2">Renforcer la confiance digitale et réduire drastiquement les risques de fraude.</p>
                         </div>
                         <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl">
                             <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center shrink-0 mt-1">
@@ -919,8 +947,8 @@
                     </div>
                     
                     <div class="mt-12 p-8 border-l-4 border-blue-600 bg-blue-50 rounded-r-2xl">
-                        <h4 class="font-bold text-blue-900 mb-2">Notre Vision</h4>
-                        <p class="italic text-slate-700">"Des interactions plus simples, plus rapides et plus sécurisées, où la confiance digitale et la responsabilité écologique deviennent des piliers."</p>
+                        <h4 class="font-bold text-blue-900 mb-2" data-i18n="goals.visionLabel">Notre Vision</h4>
+                        <p class="italic text-slate-700" data-i18n="goals.visionText">"Des interactions plus simples, plus rapides et plus sécurisées, où la confiance digitale et la responsabilité écologique deviennent des piliers."</p>
                     </div>
                 </div>
 
@@ -929,27 +957,27 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div class="p-6 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
                             <i data-lucide="landmark" class="w-8 h-8 text-blue-600 mb-4"></i>
-                            <span class="font-bold block">Banques & Fintech</span>
+                            <span class="font-bold block" data-i18n="sectors.bank">Banques & Fintech</span>
                         </div>
                         <div class="p-6 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
                             <i data-lucide="shield" class="w-8 h-8 text-blue-600 mb-4"></i>
-                            <span class="font-bold block">Assurances</span>
+                            <span class="font-bold block" data-i18n="sectors.insurance">Assurances</span>
                         </div>
                         <div class="p-6 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
                             <i data-lucide="radio" class="w-8 h-8 text-blue-600 mb-4"></i>
-                            <span class="font-bold block">Télécms</span>
+                            <span class="font-bold block" data-i18n="sectors.telecom">Télécms</span>
                         </div>
                         <div class="p-6 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
                             <i data-lucide="building" class="w-8 h-8 text-blue-600 mb-4"></i>
-                            <span class="font-bold block">Administrations</span>
+                            <span class="font-bold block" data-i18n="sectors.admin">Administrations</span>
                         </div>
                         <div class="p-6 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
                             <i data-lucide="cloud" class="w-8 h-8 text-blue-600 mb-4"></i>
-                            <span class="font-bold block">Entreprises SaaS</span>
+                            <span class="font-bold block" data-i18n="sectors.saas">Entreprises SaaS</span>
                         </div>
                         <div class="p-6 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
                             <i data-lucide="mouse-pointer" class="w-8 h-8 text-blue-600 mb-4"></i>
-                            <span class="font-bold block">Services Digitaux</span>
+                            <span class="font-bold block" data-i18n="sectors.digital">Services Digitaux</span>
                         </div>
                     </div>
                 </div>
@@ -961,7 +989,7 @@
     <section class="py-16 bg-slate-50 border-y border-slate-100 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
             <div class="text-center reveal">
-                <h2 class="text-sm font-bold tracking-widest text-slate-400 uppercase">Ils nous font confiance</h2>
+                <h2 class="text-sm font-bold tracking-widest text-slate-400 uppercase" data-i18n="trusted.title">Ils nous font confiance</h2>
             </div>
         </div>
 
@@ -1020,43 +1048,43 @@
     <section id="faq" class="py-24 bg-slate-50 border-t border-slate-100" aria-labelledby="faq-heading">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
-                <h2 id="faq-heading" class="alta-section-title text-3xl lg:text-4xl font-bold text-slate-900 mb-3">FAQ — Technologie &amp; sécurité</h2>
-                <p class="text-slate-600">Réponses synthétiques pour DSI, architectes et RSSI. Pour un dossier détaillé, <a href="mailto:contact@altadigit.pro" class="text-blue-600 font-semibold hover:underline">contactez-nous</a>.</p>
+                <h2 id="faq-heading" class="alta-section-title text-3xl lg:text-4xl font-bold text-slate-900 mb-3" data-i18n="faq.title">FAQ — Technologie &amp; sécurité</h2>
+                <p class="text-slate-600" data-i18n="faq.subtitle" data-i18n-html="faq.subtitle">Réponses synthétiques pour DSI, architectes et RSSI. Pour un dossier détaillé, <a href="mailto:contact@altadigit.pro" class="text-blue-600 font-semibold hover:underline" data-i18n="faq.contactLink">contactez-nous</a>.</p>
             </div>
             <div class="space-y-3 reveal">
                 <details class="faq-disclosure bg-white border border-slate-200 rounded-2xl px-5 py-1 shadow-sm transition-shadow">
                     <summary class="flex items-center justify-between gap-4 py-4 font-semibold text-slate-900 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <span>Quelle technologie IA utilisez-vous ?</span>
+                        <span data-i18n="faq.q1">Quelle technologie IA utilisez-vous ?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0"></i>
                     </summary>
-                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="faq.a1">
                         Nous combinons des modèles de langage et des modèles spécialisés (extraction, classification, RAG) selon le cas d’usage, hébergés dans des environnements contrôlés. L’objectif est l’<strong class="text-slate-800">intelligence artificielle entreprise</strong> utile et auditable, pas un gadget générique.
                     </div>
                 </details>
                 <details class="faq-disclosure bg-white border border-slate-200 rounded-2xl px-5 py-1 shadow-sm transition-shadow">
                     <summary class="flex items-center justify-between gap-4 py-4 font-semibold text-slate-900 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <span>Comment assurez-vous la sécurité des données ?</span>
+                        <span data-i18n="faq.q2">Comment assurez-vous la sécurité des données ?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0"></i>
                     </summary>
-                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="faq.a2">
                         Chiffrement en transit et au repos, cloisonnement des environnements, journaux d’accès, revue des intégrations et principes du moindre privilège. Les modalités (région de stockage, DPA, durcissement) sont cadrées avec votre RSSI dès la phase cadrage.
                     </div>
                 </details>
                 <details class="faq-disclosure bg-white border border-slate-200 rounded-2xl px-5 py-1 shadow-sm transition-shadow">
                     <summary class="flex items-center justify-between gap-4 py-4 font-semibold text-slate-900 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <span>Le jumeau numérique est-il compatible avec nos systèmes existants ?</span>
+                        <span data-i18n="faq.q3">Le jumeau numérique est-il compatible avec nos systèmes existants ?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0"></i>
                     </summary>
-                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="faq.a3">
                         Oui : le <strong class="text-slate-800">digital twin</strong> s’appuie sur vos sources (API, exports contrôlés, bases métier) sans remplacer d’emblée votre ERP ou CRM. L’approche est incrémentale : cartographie, connecteurs, puis automatisation là où le ROI est clair.
                     </div>
                 </details>
                 <details class="faq-disclosure bg-white border border-slate-200 rounded-2xl px-5 py-1 shadow-sm transition-shadow">
                     <summary class="flex items-center justify-between gap-4 py-4 font-semibold text-slate-900 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <span>Que signifient concrètement « schéma ouvert » et « prêt on-prem » ?</span>
+                        <span data-i18n="faq.q4">Que signifient concrètement « schéma ouvert » et « prêt on-prem » ?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0"></i>
                     </summary>
-                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    <div class="pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="faq.a4">
                         <strong class="text-slate-800">Schéma ouvert</strong> : vos données et modèles restent interopérables (formats documentés, exports), vous évitez une dépendance opaque à un silo fermé. <strong class="text-slate-800">Prêt on-prem</strong> : possibilité d’exécuter tout ou partie de la solution dans votre infrastructure pour la souveraineté, la latence ou les contraintes sectorielles.
                     </div>
                 </details>
@@ -1068,8 +1096,8 @@
     <section id="services" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="alta-section-title text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Nos Services</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Un accompagnement complet pour votre <strong class="font-semibold text-slate-800">transformation digitale</strong>, votre <strong class="font-semibold text-slate-800">efficacité opérationnelle</strong> et vos enjeux d’<strong class="font-semibold text-slate-800">automatisation IA</strong> et d’infrastructure.</p>
+                <h2 class="alta-section-title text-3xl lg:text-4xl font-bold text-slate-900 mb-4" data-i18n="services.title">Nos Services</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-i18n="services.subtitle">Un accompagnement complet pour votre <strong class="font-semibold text-slate-800">transformation digitale</strong>, votre <strong class="font-semibold text-slate-800">efficacité opérationnelle</strong> et vos enjeux d’<strong class="font-semibold text-slate-800">automatisation IA</strong> et d’infrastructure.</p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
@@ -1078,12 +1106,12 @@
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                         <i data-lucide="briefcase" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Stratégie, Gouvernance & SI</h3>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="services.card1Title">Stratégie, Gouvernance & SI</h3>
                     <ul class="space-y-3 text-slate-600 mb-8">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Audit & diagnostic</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Roadmap & priorisation</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> Conduite du changement</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> PMO & gouvernance</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> <span data-i18n="services.card1Item1">Audit & diagnostic</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> <span data-i18n="services.card1Item2">Roadmap & priorisation</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> <span data-i18n="services.card1Item3">Conduite du changement</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div> <span data-i18n="services.card1Item4">PMO & gouvernance</span></li>
                     </ul>
                 </div>
 
@@ -1092,12 +1120,12 @@
                     <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
                         <i data-lucide="code" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Développement sur mesure</h3>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="services.card2Title">Développement sur mesure</h3>
                     <ul class="space-y-3 text-slate-600 mb-8">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Sites & plateformes</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Applications métier</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> Intégrations & APIs</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> UX/UI Design</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> <span data-i18n="services.card2Item1">Sites & plateformes</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> <span data-i18n="services.card2Item2">Applications métier</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> <span data-i18n="services.card2Item3">Intégrations & APIs</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div> <span data-i18n="services.card2Item4">UX/UI Design</span></li>
                     </ul>
                 </div>
 
@@ -1106,12 +1134,12 @@
                     <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
                         <i data-lucide="server" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Cloud & Infrastructure</h3>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="services.card3Title">Cloud & Infrastructure</h3>
                     <ul class="space-y-3 text-slate-600 mb-8">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Architecture & migration</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Observabilité & exploitation</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Cybersécurité</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> Continuité d'activité</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> <span data-i18n="services.card3Item1">Architecture & migration</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> <span data-i18n="services.card3Item2">Observabilité & exploitation</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> <span data-i18n="services.card3Item3">Cybersécurité</span></li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-emerald-600 rounded-full"></div> <span data-i18n="services.card3Item4">Continuité d'activité</span></li>
                     </ul>
                 </div>
             </div>
@@ -1136,7 +1164,7 @@
                             </g>
                             <text x="52" y="30" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#FFFFFF" letter-spacing="1">ALTADI</text>
                             <text x="121" y="30" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#3A9FE8" letter-spacing="1">GIT</text>
-                            <text x="52" y="46" font-family="Arial,sans-serif" font-size="5.5" fill="#94A3B8" letter-spacing="2.2">YOUR DIGITAL TRANSFORMATION PARTNER</text>
+                            <text data-i18n="logo.tagline" x="52" y="46" font-family="Arial,sans-serif" font-size="5.5" fill="#94A3B8" letter-spacing="2.2">YOUR DIGITAL TRANSFORMATION PARTNER</text>
                             <line x1="46" y1="44.5" x2="52" y2="44.5" stroke="#94A3B8" stroke-width="0.5"/>
                             <line x1="132" y1="44.5" x2="138" y2="44.5" stroke="#94A3B8" stroke-width="0.5"/>
                         </svg>
@@ -1158,19 +1186,19 @@
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-6">Navigation</h4>
+                    <h4 class="font-bold mb-6" data-i18n="footer.navTitle">Navigation</h4>
                     <ul class="space-y-4 text-slate-400">
-                        <li><a href="#about" class="hover:text-white transition-colors">À Propos</a></li>
-                        <li><a href="#expertise" class="hover:text-white transition-colors">Expertise</a></li>
-                        <li><a href="#innovation" class="hover:text-white transition-colors">Innovation</a></li>
-                        <li><a href="#temoignages" class="hover:text-white transition-colors">Témoignages</a></li>
-                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors" data-i18n="nav.about">À Propos</a></li>
+                        <li><a href="#expertise" class="hover:text-white transition-colors" data-i18n="nav.expertise">Expertise</a></li>
+                        <li><a href="#innovation" class="hover:text-white transition-colors" data-i18n="nav.innovation">Innovation</a></li>
+                        <li><a href="#temoignages" class="hover:text-white transition-colors" data-i18n="nav.testimonials">Témoignages</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors" data-i18n="nav.faq">FAQ</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors" data-i18n="nav.services">Services</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-bold mb-6">Contact</h4>
+                    <h4 class="font-bold mb-6" data-i18n="footer.contactTitle">Contact</h4>
                     <ul class="space-y-4 text-slate-400">
                         <li class="flex items-center gap-3">
                             <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
@@ -1178,21 +1206,503 @@
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="mobile-pin" class="w-5 h-5 text-blue-400"></i>
-                            <span>+216 24 331 464</span>
+                            <span data-i18n="footer.phone" dir="ltr">+216 24 331 464</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-                <p>&copy; 2026 Altadigit. Tous droits réservés.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 Altadigit. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Translation data
+        const translations = {
+            fr: {
+                'meta.title': 'Altadigit | Transformation digitale, automatisation IA & jumeau numérique',
+                'nav.about': 'À Propos',
+                'nav.expertise': 'Expertise',
+                'nav.innovation': 'Innovation',
+                'nav.faq': 'FAQ',
+                'nav.services': 'Services',
+                'nav.contact': 'Contactez-nous',
+                'nav.testimonials': 'Témoignages',
+                'nav.mobileMenuLabel': 'Menu mobile',
+                'hero.badge': 'Transformation Digitale',
+                'hero.title': 'Votre Transformation Digitale, <br> <span class="gradient-text">du cadrage à la livraison</span>',
+                'hero.subtitle': 'Altadigit accompagne les organisations dans leur <strong class="font-semibold text-slate-800">transformation digitale</strong> et l\'<strong class="font-semibold text-slate-800">optimisation des workflows</strong> grâce à l\'<strong class="font-semibold text-slate-800">intelligence artificielle entreprise</strong>, l\'<strong class="font-semibold text-slate-800">automatisation IA</strong> et des solutions d\'identité numérique pour digitaliser, automatiser et sécuriser vos opérations.',
+                'hero.cta1': 'Découvrir nos solutions <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>',
+                'hero.cta2': 'Notre vision',
+                'logo.tagline': 'YOUR DIGITAL TRANSFORMATION PARTNER',
+                'hero.imageAlt': 'Altadigit Digital Transformation',
+                'hero.badgeLabel': 'Expertise',
+                'hero.badgeValue': 'Confiance Digitale',
+                'marquee.audit': 'Audit & diagnostic',
+                'marquee.roadmap': 'Roadmap & priorisation',
+                'marquee.change': 'Conduite du changement',
+                'marquee.pmo': 'PMO & gouvernance',
+                'marquee.architecture': 'Architecture & migration',
+                'marquee.observability': 'Observabilité & exploitation',
+                'marquee.cyber': 'Cybersécurité',
+                'marquee.continuity': 'Continuité d\'activité',
+                'diagnostic.sectionLabel': 'Section 01 — Le diagnostic',
+                'diagnostic.headline': 'Votre stack technique est <span class="relative inline-block align-baseline"> <span class="italic text-red-600">fissurée</span> <svg class="pointer-events-none absolute left-0 -bottom-2 w-full h-[14px] text-red-600/70" viewBox="0 0 220 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M4 16C34 8 58 20 88 12C118 4 140 20 170 12C193 6 208 10 216 12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/> <path d="M8 20C40 10 62 22 92 14C122 6 144 22 174 14C196 8 210 12 218 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/> </svg> </span>.',
+                'diagnostic.headline2': 'Vous avez fini par <span class="font-light text-slate-500">ne plus y prêter attention</span>.',
+                'diagnostic.support': 'Ce n\'est pas de la productivité : c\'est de l\'archéologie entre outils hétérogènes.',
+                'diagnostic.expressLabel': 'Bilan express',
+                'diagnostic.expressText': 'L\'information est éclatée, la responsabilité floue, et l\'écart entre « théorie » et pratique devient la norme.',
+                'diagnostic.card1Label': 'CRM',
+                'diagnostic.card1Sub': 'Salesforce / HubSpot',
+                'diagnostic.problemLabel': 'Problème',
+                'diagnostic.card1Desc': '23 champs personnalisés ignorés',
+                'diagnostic.card1Stat': 'données inutilisées',
+                'diagnostic.card2Label': 'Tableurs',
+                'diagnostic.card2Sub': 'La base « parallèle »',
+                'diagnostic.card2Desc': 'Dernière modif : il y a 3 semaines',
+                'diagnostic.card2Stat': 'version « officielle »',
+                'diagnostic.card3Label': 'Automatisations',
+                'diagnostic.card3Sub': 'Zapier / Make',
+                'diagnostic.card3Desc': 'Webhook en échec à 03:42',
+                'diagnostic.card3Stat': 'erreurs cette semaine',
+                'diagnostic.card4Label': 'Assistant IA',
+                'diagnostic.card4Sub': 'Assistant générique sans contexte métier',
+                'diagnostic.card4Desc': 'Ne connaît pas votre activité',
+                'diagnostic.card4Stat': 'contexte métier',
+                'diagnostic.ctaQuestion': 'Et si vos outils comprenaient vraiment ce que vous faites ?',
+                'diagnostic.ctaButton': 'VOIR L\'ALTERNATIVE',
+                'innovation.sectionLabel': 'Section 02 — La réponse',
+                'innovation.headline': 'Des outils qui <span class="italic text-emerald-300">s\'adaptent</span> <span class="font-light text-slate-300">à vous</span>.',
+                'innovation.subtitle': 'Rencontrez votre <span class="text-emerald-300 font-semibold">jumeau numérique</span> (<span lang="en">Digital Twin</span>) — un modèle vivant de la façon dont votre activité fonctionne vraiment.',
+                'innovation.manifesto': 'Des logiciels calés sur la réalité — pas l\'inverse.',
+                'innovation.step1Title': 'Entretien IA',
+                'innovation.step1Desc': 'Une conversation, pas un formulaire. L\'IA cartographie comment vous travaillez vraiment — contournements, règles implicites.',
+                'innovation.detailLabel': 'Détail :',
+                'innovation.step1Detail': 'Voix ou texte, sans script figé.',
+                'innovation.step2Title': 'Modélisation du jumeau',
+                'innovation.step2Desc': 'Vos opérations deviennent un graphe vivant, capturé tel qu\'il existe aujourd\'hui.',
+                'innovation.step2Detail': 'Éditable, versionné, à vous.',
+                'innovation.step3Title': 'Génération d\'outils',
+                'innovation.step3Desc': 'Interfaces, automatisations et tableaux de bord générés à partir de votre jumeau.',
+                'innovation.step3Detail': 'Déployé dans votre stack existante.',
+                'innovation.step4Title': 'Amélioration continue',
+                'innovation.step4Desc': 'Chaque interaction affine le jumeau : l\'écart entre théorie et pratique devient un signal utile.',
+                'innovation.step4Detail': 'Apprentissage à partir de l\'usage réel.',
+                'innovation.open': 'Ouvrir',
+                'innovation.time1': '~22 min',
+                'innovation.time2': 'Temps réel',
+                'innovation.time3': '< 60 sec',
+                'innovation.time4': 'En continu',
+                'innovation.stat1': 'moins de changements d\'outil',
+                'innovation.stat2': 'déploiement d\'outils plus rapide',
+                'innovation.stat3': 'enfermement fournisseur',
+                'innovation.manifestoLabel': 'Manifeste',
+                'innovation.manifestoQuote': '« La prochaine génération de logiciels ne se limitera pas à être configurée : elle grandira avec votre activité. »',
+                'innovation.manifestoAttr': '— Principe fondateur, 2025',
+                'innovation.includedLabel': '// Inclus dans la plateforme',
+                'innovation.pill1': 'Entretiens d\'abord en voix',
+                'innovation.pill2': 'Graphe jumeau éditable',
+                'innovation.pill3': 'Déploiement en un clic',
+                'innovation.pill4': 'Flux auto-correctifs',
+                'innovation.pill5': 'Piste d\'audit native',
+                'innovation.pill6': 'Sans migration forcée',
+                'innovation.pill7': 'Prêt on-prem',
+                'innovation.pill8': 'Schéma ouvert',
+                'innovation.ctaTitle': 'Prêt à <span class="italic text-emerald-300">faire évoluer</span> votre stack ?',
+                'innovation.ctaSub': '22 minutes vers un premier jumeau',
+                'innovation.ctaButton': 'RÉSERVER L\'ENTRETIEN',
+                'goals.title': 'Nos Objectifs',
+                'goals.item1': 'Accélérer la transformation digitale et simplifier les processus opérationnels.',
+                'goals.item2': 'Renforcer la confiance digitale et réduire drastiquement les risques de fraude.',
+                'goals.item3': 'Améliorer l\'expérience utilisateur globale via des interfaces modernes et intuitives.',
+                'goals.visionLabel': 'Notre Vision',
+                'goals.visionText': '"Des interactions plus simples, plus rapides et plus sécurisées, où la confiance digitale et la responsabilité écologique deviennent des piliers."',
+                'sectors.title': 'Secteurs d\'activité',
+                'sectors.bank': 'Banques & Fintech',
+                'sectors.insurance': 'Assurances',
+                'sectors.telecom': 'Télécms',
+                'sectors.admin': 'Administrations',
+                'sectors.saas': 'Entreprises SaaS',
+                'sectors.digital': 'Services Digitaux',
+                'trusted.title': 'Ils nous font confiance',
+                'faq.title': 'FAQ — Technologie & sécurité',
+                'faq.subtitle': 'Réponses synthétiques pour DSI, architectes et RSSI. Pour un dossier détaillé, <a href="mailto:contact@altadigit.pro" class="text-blue-600 font-semibold hover:underline">contactez-nous</a>.',
+                'faq.q1': 'Quelle technologie IA utilisez-vous ?',
+                'faq.a1': 'Nous combinons des modèles de langage et des modèles spécialisés (extraction, classification, RAG) selon le cas d\'usage, hébergés dans des environnements contrôlés. L\'objectif est l\'<strong class="text-slate-800">intelligence artificielle entreprise</strong> utile et auditable, pas un gadget générique.',
+                'faq.q2': 'Comment assurez-vous la sécurité des données ?',
+                'faq.a2': 'Chiffrement en transit et au repos, cloisonnement des environnements, journaux d\'accès, revue des intégrations et principes du moindre privilège. Les modalités (région de stockage, DPA, durcissement) sont cadrées avec votre RSSI dès la phase cadrage.',
+                'faq.q3': 'Le jumeau numérique est-il compatible avec nos systèmes existants ?',
+                'faq.a3': 'Oui : le <strong class="text-slate-800">digital twin</strong> s\'appuie sur vos sources (API, exports contrôlés, bases métier) sans remplacer d\'emblée votre ERP ou CRM. L\'approche est incrémentale : cartographie, connecteurs, puis automatisation là où le ROI est clair.',
+                'faq.q4': 'Que signifient concrètement « schéma ouvert » et « prêt on-prem » ?',
+                'faq.a4': '<strong class="text-slate-800">Schéma ouvert</strong> : vos données et modèles restent interopérables (formats documentés, exports), vous évitez une dépendance opaque à un silo fermé. <strong class="text-slate-800">Prêt on-prem</strong> : possibilité d\'exécuter tout ou partie de la solution dans votre infrastructure pour la souveraineté, la latence ou les contraintes sectorielles.',
+                'services.title': 'Nos Services',
+                'services.subtitle': 'Un accompagnement complet pour votre <strong class="font-semibold text-slate-800">transformation digitale</strong>, votre <strong class="font-semibold text-slate-800">efficacité opérationnelle</strong> et vos enjeux d\'<strong class="font-semibold text-slate-800">automatisation IA</strong> et d\'infrastructure.',
+                'services.card1Title': 'Stratégie, Gouvernance & SI',
+                'services.card1Item1': 'Audit & diagnostic',
+                'services.card1Item2': 'Roadmap & priorisation',
+                'services.card1Item3': 'Conduite du changement',
+                'services.card1Item4': 'PMO & gouvernance',
+                'services.card2Title': 'Développement sur mesure',
+                'services.card2Item1': 'Sites & plateformes',
+                'services.card2Item2': 'Applications métier',
+                'services.card2Item3': 'Intégrations & APIs',
+                'services.card2Item4': 'UX/UI Design',
+                'services.card3Title': 'Cloud & Infrastructure',
+                'services.card3Item1': 'Architecture & migration',
+                'services.card3Item2': 'Observabilité & exploitation',
+                'services.card3Item3': 'Cybersécurité',
+                'services.card3Item4': 'Continuité d\'activité',
+                'footer.description': 'Entreprise spécialisée dans la transformation digitale et les solutions d\'identité numérique sécurisée. Nous digitalisons, automatisons et sécurisons vos interactions.',
+                'footer.navTitle': 'Navigation',
+                'footer.contactTitle': 'Contact',
+                'footer.copyright': '&copy; 2026 Altadigit. Tous droits réservés.',
+                'footer.phone': '+216 24 331 464',
+            },
+            en: {
+                'meta.title': 'Altadigit | Digital Transformation, AI Automation & Digital Twin',
+                'nav.about': 'About',
+                'nav.expertise': 'Expertise',
+                'nav.innovation': 'Innovation',
+                'nav.faq': 'FAQ',
+                'nav.services': 'Services',
+                'nav.contact': 'Contact Us',
+                'logo.tagline': 'YOUR DIGITAL TRANSFORMATION PARTNER',
+                'nav.testimonials': 'Testimonials',
+                'nav.mobileMenuLabel': 'Mobile menu',
+                'hero.badge': 'Digital Transformation',
+                'hero.title': 'Your Digital Transformation, <br> <span class="gradient-text">from scoping to delivery</span>',
+                'hero.subtitle': 'Altadigit supports organizations in their <strong class="font-semibold text-slate-800">digital transformation</strong> and <strong class="font-semibold text-slate-800">workflow optimization</strong> through <strong class="font-semibold text-slate-800">enterprise AI</strong>, <strong class="font-semibold text-slate-800">AI automation</strong> and digital identity solutions to digitize, automate and secure your operations.',
+                'hero.cta1': 'Discover our solutions <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>',
+                'hero.cta2': 'Our vision',
+                'hero.imageAlt': 'Altadigit Digital Transformation',
+                'hero.badgeLabel': 'Expertise',
+                'hero.badgeValue': 'Digital Trust',
+                'marquee.audit': 'Audit & diagnosis',
+                'marquee.roadmap': 'Roadmap & prioritization',
+                'marquee.change': 'Change management',
+                'marquee.pmo': 'PMO & governance',
+                'marquee.architecture': 'Architecture & migration',
+                'marquee.observability': 'Observability & operations',
+                'marquee.cyber': 'Cybersecurity',
+                'marquee.continuity': 'Business continuity',
+                'diagnostic.sectionLabel': 'Section 01 — The diagnosis',
+                'diagnostic.headline': 'Your tech stack is <span class="relative inline-block align-baseline"> <span class="italic text-red-600">cracked</span> <svg class="pointer-events-none absolute left-0 -bottom-2 w-full h-[14px] text-red-600/70" viewBox="0 0 220 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M4 16C34 8 58 20 88 12C118 4 140 20 170 12C193 6 208 10 216 12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/> <path d="M8 20C40 10 62 22 92 14C122 6 144 22 174 14C196 8 210 12 218 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/> </svg> </span>.',
+                'diagnostic.headline2': 'You\'ve stopped <span class="font-light text-slate-500">paying attention</span>.',
+                'diagnostic.support': 'This isn\'t productivity — it\'s archaeology across heterogeneous tools.',
+                'diagnostic.expressLabel': 'Quick assessment',
+                'diagnostic.expressText': 'Information is scattered, responsibility is unclear, and the gap between "theory" and practice has become the norm.',
+                'diagnostic.card1Label': 'CRM',
+                'diagnostic.card1Sub': 'Salesforce / HubSpot',
+                'diagnostic.problemLabel': 'Problem',
+                'diagnostic.card1Desc': '23 custom fields ignored',
+                'diagnostic.card1Stat': 'unused data',
+                'diagnostic.card2Label': 'Spreadsheets',
+                'diagnostic.card2Sub': 'The "parallel" database',
+                'diagnostic.card2Desc': 'Last modified: 3 weeks ago',
+                'diagnostic.card2Stat': '"official" version',
+                'diagnostic.card3Label': 'Automations',
+                'diagnostic.card3Sub': 'Zapier / Make',
+                'diagnostic.card3Desc': 'Webhook failing at 03:42',
+                'diagnostic.card3Stat': 'errors this week',
+                'diagnostic.card4Label': 'AI Assistant',
+                'diagnostic.card4Sub': 'Generic assistant without business context',
+                'diagnostic.card4Desc': 'Doesn\'t know your business',
+                'diagnostic.card4Stat': 'business context',
+                'diagnostic.ctaQuestion': 'What if your tools actually understood what you do?',
+                'diagnostic.ctaButton': 'SEE THE ALTERNATIVE',
+                'innovation.sectionLabel': 'Section 02 — The answer',
+                'innovation.headline': 'Tools that <span class="italic text-emerald-300">adapt</span> <span class="font-light text-slate-300">to you</span>.',
+                'innovation.subtitle': 'Meet your <span class="text-emerald-300 font-semibold">Digital Twin</span> — a living model of how your business really works.',
+                'innovation.manifesto': 'Software aligned with reality — not the other way around.',
+                'innovation.step1Title': 'AI Interview',
+                'innovation.step1Desc': 'A conversation, not a form. The AI maps how you really work — workarounds, implicit rules.',
+                'innovation.detailLabel': 'Detail:',
+                'innovation.step1Detail': 'Voice or text, no fixed script.',
+                'innovation.step2Title': 'Twin Modeling',
+                'innovation.step2Desc': 'Your operations become a living graph, captured as it exists today.',
+                'innovation.step2Detail': 'Editable, versioned, yours.',
+                'innovation.step3Title': 'Tool Generation',
+                'innovation.step3Desc': 'Interfaces, automations and dashboards generated from your twin.',
+                'innovation.step3Detail': 'Deployed in your existing stack.',
+                'innovation.step4Title': 'Continuous Improvement',
+                'innovation.step4Desc': 'Every interaction refines the twin — the gap between theory and practice becomes useful signal.',
+                'innovation.step4Detail': 'Learning from real usage.',
+                'innovation.open': 'Open',
+                'innovation.time1': '~22 min',
+                'innovation.time2': 'Real-time',
+                'innovation.time3': '< 60 sec',
+                'innovation.time4': 'Continuous',
+                'innovation.stat1': 'fewer tool switches',
+                'innovation.stat2': 'faster tool deployment',
+                'innovation.stat3': 'vendor lock-in',
+                'innovation.manifestoLabel': 'Manifesto',
+                'innovation.manifestoQuote': '"The next generation of software won\'t just be configured — it will grow with your business."',
+                'innovation.manifestoAttr': '— Founding principle, 2025',
+                'innovation.includedLabel': '// Included in the platform',
+                'innovation.pill1': 'Voice-first interviews',
+                'innovation.pill2': 'Editable twin graph',
+                'innovation.pill3': 'One-click deployment',
+                'innovation.pill4': 'Self-correcting flows',
+                'innovation.pill5': 'Native audit trail',
+                'innovation.pill6': 'No forced migration',
+                'innovation.pill7': 'On-prem ready',
+                'innovation.pill8': 'Open schema',
+                'innovation.ctaTitle': 'Ready to <span class="italic text-emerald-300">evolve</span> your stack?',
+                'innovation.ctaSub': '22 minutes to your first twin',
+                'innovation.ctaButton': 'BOOK THE INTERVIEW',
+                'goals.title': 'Our Goals',
+                'goals.item1': 'Accelerate digital transformation and simplify operational processes.',
+                'goals.item2': 'Strengthen digital trust and drastically reduce fraud risks.',
+                'goals.item3': 'Improve overall user experience through modern, intuitive interfaces.',
+                'goals.visionLabel': 'Our Vision',
+                'goals.visionText': '"Simpler, faster and more secure interactions, where digital trust and ecological responsibility become pillars."',
+                'sectors.title': 'Industry Sectors',
+                'sectors.bank': 'Banking & Fintech',
+                'sectors.insurance': 'Insurance',
+                'sectors.telecom': 'Telecom',
+                'sectors.admin': 'Government',
+                'sectors.saas': 'SaaS Companies',
+                'sectors.digital': 'Digital Services',
+                'trusted.title': 'Trusted By',
+                'faq.title': 'FAQ — Technology & Security',
+                'faq.subtitle': 'Concise answers for CIOs, architects and CISOs. For a detailed dossier, <a href="mailto:contact@altadigit.pro" class="text-blue-600 font-semibold hover:underline">contact us</a>.',
+                'faq.q1': 'What AI technology do you use?',
+                'faq.a1': 'We combine language models and specialized models (extraction, classification, RAG) according to the use case, hosted in controlled environments. The goal is useful and auditable <strong class="text-slate-800">enterprise AI</strong>, not a generic gadget.',
+                'faq.q2': 'How do you ensure data security?',
+                'faq.a2': 'Encryption in transit and at rest, environment isolation, access logs, integration review and least-privilege principles. The specifics (storage region, DPA, hardening) are defined with your CISO from the scoping phase.',
+                'faq.q3': 'Is the digital twin compatible with our existing systems?',
+                'faq.a3': 'Yes: the <strong class="text-slate-800">digital twin</strong> leverages your sources (API, controlled exports, business databases) without immediately replacing your ERP or CRM. The approach is incremental: mapping, connectors, then automation where ROI is clear.',
+                'faq.q4': 'What do "open schema" and "on-prem ready" mean concretely?',
+                'faq.a4': '<strong class="text-slate-800">Open schema</strong>: your data and models remain interoperable (documented formats, exports), avoiding opaque dependency on a closed silo. <strong class="text-slate-800">On-prem ready</strong>: ability to run all or part of the solution in your infrastructure for sovereignty, latency or sector constraints.',
+                'services.title': 'Our Services',
+                'services.subtitle': 'Comprehensive support for your <strong class="font-semibold text-slate-800">digital transformation</strong>, <strong class="font-semibold text-slate-800">operational efficiency</strong> and <strong class="font-semibold text-slate-800">AI automation</strong> and infrastructure challenges.',
+                'services.card1Title': 'Strategy, Governance & IT',
+                'services.card1Item1': 'Audit & diagnosis',
+                'services.card1Item2': 'Roadmap & prioritization',
+                'services.card1Item3': 'Change management',
+                'services.card1Item4': 'PMO & governance',
+                'services.card2Title': 'Custom Development',
+                'services.card2Item1': 'Sites & platforms',
+                'services.card2Item2': 'Business applications',
+                'services.card2Item3': 'Integrations & APIs',
+                'services.card2Item4': 'UX/UI Design',
+                'services.card3Title': 'Cloud & Infrastructure',
+                'services.card3Item1': 'Architecture & migration',
+                'services.card3Item2': 'Observability & operations',
+                'services.card3Item3': 'Cybersecurity',
+                'services.card3Item4': 'Business continuity',
+                'footer.description': 'Company specialized in digital transformation and secure digital identity solutions. We digitize, automate and secure your interactions.',
+                'footer.navTitle': 'Navigation',
+                'footer.contactTitle': 'Contact',
+                'footer.copyright': '&copy; 2026 Altadigit. All rights reserved.',
+                'footer.phone': '+216 24 331 464',
+            },
+            ar: {
+                'meta.title': 'Altadigit | التحول الرقمي، الأتمتة بالذكاء الاصطناعي والتوأم الرقمي',
+                'nav.about': 'حول',
+                'nav.expertise': 'الخبرة',
+                'nav.innovation': 'الابتكار',
+                'nav.faq': 'الأسئلة',
+                'nav.services': 'الخدمات',
+                'nav.contact': 'اتصل بنا',
+                'logo.tagline': 'شريكك في التحول الرقمي',
+                'nav.testimonials': 'الشهادات',
+                'nav.mobileMenuLabel': 'القائمة',
+                'hero.badge': 'التحول الرقمي',
+                'hero.title': 'تحولك الرقمي، <br> <span class="gradient-text">من التخطيط إلى التسليم</span>',
+                'hero.subtitle': 'ترافق Altadigit المؤسسات في <strong class="font-semibold text-slate-800">تحولها الرقمي</strong> و <strong class="font-semibold text-slate-800">تحسين سير العمل</strong> عبر <strong class="font-semibold text-slate-800">الذكاء الاصطناعي المؤسسي</strong> و <strong class="font-semibold text-slate-800">الأتمتة بالذكاء الاصطناعي</strong> وحلول الهوية الرقمية لرقمنة وأتمتة وتأمين عملياتكم.',
+                'hero.cta1': 'اكتشف حلولنا <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>',
+                'hero.cta2': 'رؤيتنا',
+                'hero.imageAlt': 'Altadigit التحول الرقمي',
+                'hero.badgeLabel': 'خبرة',
+                'hero.badgeValue': 'الثقة الرقمية',
+                'marquee.audit': 'التدقيق والتشخيص',
+                'marquee.roadmap': 'خريطة الطريق والأولويات',
+                'marquee.change': 'إدارة التغيير',
+                'marquee.pmo': 'مكتب إدارة المشاريع والحوكمة',
+                'marquee.architecture': 'الهندسة والترحيل',
+                'marquee.observability': 'المراقبة والتشغيل',
+                'marquee.cyber': 'الأمن السيبراني',
+                'marquee.continuity': 'استمرارية الأعمال',
+                'diagnostic.sectionLabel': 'القسم 01 — التشخيص',
+                'diagnostic.headline': 'منظومتك التقنية <span class="relative inline-block align-baseline"> <span class="italic text-red-600">متصدعة</span> <svg class="pointer-events-none absolute left-0 -bottom-2 w-full h-[14px] text-red-600/70" viewBox="0 0 220 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path d="M4 16C34 8 58 20 88 12C118 4 140 20 170 12C193 6 208 10 216 12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/> <path d="M8 20C40 10 62 22 92 14C122 6 144 22 174 14C196 8 210 12 218 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.55"/> </svg> </span>.',
+                'diagnostic.headline2': 'لم تعد <span class="font-light text-slate-500">تهتم بها</span>.',
+                'diagnostic.support': 'هذه ليست إنتاجية — إنها علم آثار بين أدوات غير متجانسة.',
+                'diagnostic.expressLabel': 'تقييم سريع',
+                'diagnostic.expressText': 'المعلومات متناثرة، المسؤوليات غير واضحة، والفجوة بين "النظرية" والتطبيق أصبحت هي القاعدة.',
+                'diagnostic.card1Label': 'CRM',
+                'diagnostic.card1Sub': 'Salesforce / HubSpot',
+                'diagnostic.problemLabel': 'مشكلة',
+                'diagnostic.card1Desc': '23 حقلاً مخصصاً تم تجاهلها',
+                'diagnostic.card1Stat': 'بيانات غير مستخدمة',
+                'diagnostic.card2Label': 'الجداول',
+                'diagnostic.card2Sub': 'قاعدة البيانات "الموازية"',
+                'diagnostic.card2Desc': 'آخر تعديل: منذ 3 أسابيع',
+                'diagnostic.card2Stat': 'النسخة "الرسمية"',
+                'diagnostic.card3Label': 'الأتمتة',
+                'diagnostic.card3Sub': 'Zapier / Make',
+                'diagnostic.card3Desc': 'إخفاق Webhook الساعة 03:42',
+                'diagnostic.card3Stat': 'خطأ هذا الأسبوع',
+                'diagnostic.card4Label': 'المساعد الذكي',
+                'diagnostic.card4Sub': 'مساعد عام دون سياق مؤسسي',
+                'diagnostic.card4Desc': 'لا يعرف نشاطك التجاري',
+                'diagnostic.card4Stat': 'سياق مؤسسي',
+                'diagnostic.ctaQuestion': 'ماذا لو فهمت أدواتك حقاً ما تفعله؟',
+                'diagnostic.ctaButton': 'شاهد البديل',
+                'innovation.sectionLabel': 'القسم 02 — الإجابة',
+                'innovation.headline': 'أدوات <span class="italic text-emerald-300">تتكيف</span> <span class="font-light text-slate-300">معك</span>.',
+                'innovation.subtitle': 'تعرف على <span class="text-emerald-300 font-semibold">توأمك الرقمي</span> — نموذج حي لكيفية عمل نشاطك التجاري حقاً.',
+                'innovation.manifesto': 'برمجيات متوائمة مع الواقع — وليس العكس.',
+                'innovation.step1Title': 'المقابلة الذكية',
+                'innovation.step1Desc': 'محادثة، وليس استمارة. الذكاء الاصطناعي يخطط لكيفية عملك حقاً — الحلول البديلة، القواعد الضمنية.',
+                'innovation.detailLabel': 'تفاصيل:',
+                'innovation.step1Detail': 'صوت أو نص، دون سيناريو ثابت.',
+                'innovation.step2Title': 'نمذجة التوأم',
+                'innovation.step2Desc': 'تصبح عملياتك رسماً بيانياً حياً، مصوراً كما هو موجود اليوم.',
+                'innovation.step2Detail': 'قابل للتعديل، مع التحكم في النسخ، ملكك.',
+                'innovation.step3Title': 'توليد الأدوات',
+                'innovation.step3Desc': 'واجهات وأتمتة ولوحات قيادة مولدة من توأمك الرقمي.',
+                'innovation.step3Detail': 'منشور في منظومتك الحالية.',
+                'innovation.step4Title': 'التحسين المستمر',
+                'innovation.step4Desc': 'كل تفاعل يحسّن التوأم — الفجوة بين النظرية والتطبيق تصبح إشارة مفيدة.',
+                'innovation.step4Detail': 'التعلم من الاستخدام الفعلي.',
+                'innovation.open': 'فتح',
+                'innovation.time1': '~22 دقيقة',
+                'innovation.time2': 'الوقت الفعلي',
+                'innovation.time3': '< 60 ثانية',
+                'innovation.time4': 'مستمر',
+                'innovation.stat1': 'عدد أقل من تبديل الأدوات',
+                'innovation.stat2': 'نشر أسرع للأدوات',
+                'innovation.stat3': 'احتجاز المورد',
+                'innovation.manifestoLabel': 'البيان',
+                'innovation.manifestoQuote': '« الجيل القادم من البرمجيات لن يكتفي بالتكوين — بل سينمو مع نشاطك التجاري. »',
+                'innovation.manifestoAttr': '— المبدأ المؤسس، 2025',
+                'innovation.includedLabel': '// متضمن في المنصة',
+                'innovation.pill1': 'مقابلات صوتية أولاً',
+                'innovation.pill2': 'رسم بياني للتوأم قابل للتعديل',
+                'innovation.pill3': 'نشر بنقرة واحدة',
+                'innovation.pill4': 'تدفقات ذاتية التصحيح',
+                'innovation.pill5': 'مسار تدقيق أصلي',
+                'innovation.pill6': 'بدون ترحيل إجباري',
+                'innovation.pill7': 'جاهز للتثبيت المحلي',
+                'innovation.pill8': 'مخطط مفتوح',
+                'innovation.ctaTitle': 'مستعد <span class="italic text-emerald-300">لتطوير</span> منظومتك؟',
+                'innovation.ctaSub': '22 دقيقة نحو توأمك الأول',
+                'innovation.ctaButton': 'احجز المقابلة',
+                'goals.title': 'أهدافنا',
+                'goals.item1': 'تسريع التحول الرقمي وتبسيط العمليات التشغيلية.',
+                'goals.item2': 'تعزيز الثقة الرقمية وتقليل مخاطر الاحتيال بشكل كبير.',
+                'goals.item3': 'تحسين تجربة المستخدم الشاملة عبر واجهات حديثة وبديهية.',
+                'goals.visionLabel': 'رؤيتنا',
+                'goals.visionText': '« تفاعلات أبسط وأسرع وأكثر أماناً، حيث تصبح الثقة الرقمية والمسؤولية البيئية ركيزتين أساسيتين. »',
+                'sectors.title': 'قطاعات النشاط',
+                'sectors.bank': 'البنوك والتكنولوجيا المالية',
+                'sectors.insurance': 'التأمين',
+                'sectors.telecom': 'الاتصالات',
+                'sectors.admin': 'الإدارات الحكومية',
+                'sectors.saas': 'شركات SaaS',
+                'sectors.digital': 'الخدمات الرقمية',
+                'trusted.title': 'يثقون بنا',
+                'faq.title': 'الأسئلة — التقنية والأمان',
+                'faq.subtitle': 'إجابات موجزة لمديري تقنية المعلومات والمهندسين. للملف التفصيلي، <a href="mailto:contact@altadigit.pro" class="text-blue-600 font-semibold hover:underline">اتصل بنا</a>.',
+                'faq.q1': 'ما تقنية الذكاء الاصطناعي التي تستخدمونها؟',
+                'faq.a1': 'نجمع بين نماذج اللغة ونماذج متخصصة (الاستخراج، التصنيف، RAG) حسب حالة الاستخدام، مستضافة في بيئات محكومة. الهدف هو <strong class="text-slate-800">الذكاء الاصطناعي المؤسسي</strong> المفيد والقابل للتدقيق، وليس أداة عامة.',
+                'faq.q2': 'كيف تضمنون أمن البيانات؟',
+                'faq.a2': 'التشفير أثناء النقل والتخزين، عزل البيئات، سجلات الوصول، مراجعة التكاملات ومبادئ الامتياز الأقل. تحدد التفاصيل (منطقة التخزين، DPA، التعزيز) مع مسؤول أمن المعلومات لديكم منذ مرحلة التخطيط.',
+                'faq.q3': 'هل التوأم الرقمي متوافق مع أنظمتنا الحالية؟',
+                'faq.a3': 'نعم: <strong class="text-slate-800">التوأم الرقمي</strong> يعتمد على مصادركم (API، صادرات محكومة، قواعد بيانات الأعمال) دون استبدال ERP أو CRM فوراً. النهج تدريجي: رسم الخرائط، الموصلات، ثم الأتمتة حيث يكون العائد على الاستثمار واضحاً.',
+                'faq.q4': 'ماذا يعني "المخطط المفتوح" و"جاهز للتثبيت المحلي" عملياً؟',
+                'faq.a4': '<strong class="text-slate-800">المخطط المفتوح</strong>: تبقى بياناتكم ونماذجكم قابلة للتشغيل البيني (صيغ موثقة، صادرات)، لتجنب التبعية المبهمة لصومعة مغلقة. <strong class="text-slate-800">جاهز للتثبيت المحلي</strong>: إمكانية تشغيل كل أو جزء من الحل في بنيتكم التحتية من أجل السيادة أو زمن الاستجابة أو القيود القطاعية.',
+                'services.title': 'خدماتنا',
+                'services.subtitle': 'دعم شامل لـ <strong class="font-semibold text-slate-800">تحولكم الرقمي</strong> و <strong class="font-semibold text-slate-800">كفاءتكم التشغيلية</strong> وتحديات <strong class="font-semibold text-slate-800">الأتمتة بالذكاء الاصطناعي</strong> والبنية التحتية.',
+                'services.card1Title': 'الاستراتيجية والحوكمة وتقنية المعلومات',
+                'services.card1Item1': 'التدقيق والتشخيص',
+                'services.card1Item2': 'خريطة الطريق والأولويات',
+                'services.card1Item3': 'إدارة التغيير',
+                'services.card1Item4': 'مكتب إدارة المشاريع والحوكمة',
+                'services.card2Title': 'التطوير المخصص',
+                'services.card2Item1': 'المواقع والمنصات',
+                'services.card2Item2': 'تطبيقات الأعمال',
+                'services.card2Item3': 'التكاملات و APIs',
+                'services.card2Item4': 'تصميم UX/UI',
+                'services.card3Title': 'السحابة والبنية التحتية',
+                'services.card3Item1': 'الهندسة والترحيل',
+                'services.card3Item2': 'المراقبة والتشغيل',
+                'services.card3Item3': 'الأمن السيبراني',
+                'services.card3Item4': 'استمرارية الأعمال',
+                'footer.description': 'شركة متخصصة في التحول الرقمي وحلول الهوية الرقمية الآمنة. نرقمن ونؤتمت ونؤمن تفاعلاتكم.',
+                'footer.navTitle': 'التنقل',
+                'footer.contactTitle': 'اتصل',
+                'footer.copyright': '&copy; 2026 Altadigit. جميع الحقوق محفوظة.',
+                'footer.phone': '+216 24 331 464',
+            }
+        };
+
+        // i18n system
+        let currentLang = localStorage.getItem('alta-lang') || 'fr';
+
+        function t(key) {
+            return translations[currentLang] && translations[currentLang][key] !== undefined
+                ? translations[currentLang][key]
+                : translations['fr'][key] || key;
+        }
+
+        function setDirection(lang) {
+            const dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.dir = dir;
+            document.documentElement.lang = lang;
+        }
+
+        function switchLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('alta-lang', lang);
+            setDirection(lang);
+
+            // Update all data-i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const translation = t(key);
+                if (translation && translation !== el.innerHTML) {
+                    el.innerHTML = translation;
+                }
+            });
+
+            // RTL adjustments
+            const isRtl = lang === 'ar';
+
+            document.querySelectorAll('[data-rtl-mirror]').forEach(el => {
+                const ltrVal = el.getAttribute('data-ltr');
+                const rtlVal = el.getAttribute('data-rtl');
+                el.style.cssText = isRtl ? rtlVal : ltrVal;
+            });
+
+            // Re-create Lucide icons for new content
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Update language switcher active state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                if (btnLang === lang) {
+                    btn.classList.remove('text-slate-400', 'text-slate-500', 'font-medium');
+                    btn.classList.add('text-blue-600', 'font-semibold');
+                    btn.classList.remove('bg-blue-50');
+                    if (btn.closest('#mobile-menu')) {
+                        btn.classList.add('bg-blue-50');
+                    }
+                } else {
+                    btn.classList.remove('text-blue-600', 'font-semibold', 'bg-blue-50');
+                    btn.classList.add('text-slate-400', 'font-medium');
+                    if (btn.closest('#mobile-menu')) {
+                        btn.classList.remove('text-slate-400');
+                        btn.classList.add('text-slate-500');
+                    }
+                }
+            });
+        }
 
         // Reveal on scroll logic
         const observerOptions = {
@@ -1209,22 +1719,48 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on click link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        function initMobileMenu() {
+            if (!menuBtn || !mobileMenu) return;
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-        });
+
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Initialize everything (script is at bottom, DOM is ready)
+        (function init() {
+            // First pass: apply saved language
+            switchLang(currentLang);
+
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Observe reveal elements
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Init mobile menu
+            initMobileMenu();
+
+            // Add click handlers to all language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const lang = btn.getAttribute('data-lang');
+                    switchLang(lang);
+                });
+            });
+        })();
     </script>
 
     <!-- Structured Data for SEO (JSON-LD) -->
